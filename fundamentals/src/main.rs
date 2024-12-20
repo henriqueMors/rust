@@ -61,11 +61,11 @@ fn main() {
     println!("Encerrando...");
     */
 
-
+    /*
     println!("Iniciando sombreamento...");
     let x = 5;
     println!("O valor de x é {x}.");
-    let x = x + 1;
+    let x = x + 1;          // ele recria a variavel, sem a ncessidade de mut
     println!("O valor de x é {x}.");
 
     {
@@ -76,6 +76,17 @@ fn main() {
 
     let spaces = "   ";
     let spaces = spaces.len();
+    println!("{spaces}");
+
+    let mut spaces2 = "  ";
+    println!("o valor de scaes2 é {spaces2}");
+    spaces2 = "qwerty";
+    println!("o valor de scaes2 é {spaces2}");
+
+     */
+
+
+    
 
 
 }
