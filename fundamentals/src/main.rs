@@ -82,11 +82,73 @@ fn main() {
     println!("o valor de scaes2 é {spaces2}");
     spaces2 = "qwerty";
     println!("o valor de scaes2 é {spaces2}");
+    */
 
-     */
+    /*
+    println!("numéricos...");
+
+    const VEL_MAX: f64 = 200.0 * (1000.0 / 3600.0);
+
+    let chassi = 123321;
+    let acel_max = 3.0;
+    let acel_min = -10.0;
+    let vel_max = VEL_MAX as f32; //as f32 já esta sendo aceito automaticamente
+    let comprimento = 4;
+    let posicao_atual = -100.0;
+    let vel_atual = 0.0;
+    let acel_atual = 0.0;
+
+    //adicao
+    let sum = posicao_atual + 10.0;
+
+    //subt
+    let diferenca = vel_atual - 4.3;
+
+    //mult
+    let produto = comprimento * 2;  //pode 2.0? nao pode pois o 'comprimento' já está definido como i32
+
+    //divisao
+    let coef = acel_atual / 2.0;
+    let floored = 2 / 3;
+
+    //resto
+    let resto = 43 % 5;
+
+    //transformando tipo
+    let xxx: f64 = 123.06 as f64;
+
+    //let yyy: <f64 as Add<i32>>::output = xxx + 88; //nao pode adicionar um inteiro a um f64
+    //let yyy = xxx + 88 as f64;
+    let yyy = xxx + 88f64;
+
+    println!("trunc {}, round {}, ceil {}, floor {}", 
+            xxx.trunc(), xxx.round(), xxx.ceil(), xxx.floor());
+            //trunc -> desconsidera o decimal (X.0)
+            //round -> arredondar
+            //ceil  -> arredonda para cima
+            //floor -> arredonda para baixo
+
+    println!("é isso... encerrando numéricos!")
+    */
 
 
+    //booleanos
+    println!("E aqui estao os valores booleanos...");
+    let t: bool = true;
+    let f = false;
+
+    let x = t && f;
+    let y = t || !f;
+    let _z = 12 < 13;
     
+    let cc = 'z';
+    let _c = 'z'; //underline somente para nao apresentar o aviso de erro/falha/problema
 
+    let z = 'ℤ'; //caracteres especiais no linux >>shift + ctrl + u + valor<<
+
+    println!("{}, {}, {}, {}, _z = {}, {}, {}, {}", 
+                t, f, x, y, _z, cc, _c, z);
+    
+    println!("E aqui estao os valores booleanos...");
 
 }
