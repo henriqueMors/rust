@@ -133,6 +133,7 @@ fn main() {
 
 
     //booleanos
+    /*
     println!("E aqui estao os valores booleanos...");
     let t: bool = true;
     let f = false;
@@ -150,5 +151,11 @@ fn main() {
                 t, f, x, y, _z, cc, _c, z);
     
     println!("E aqui estao os valores booleanos...");
+    */
+
+    let cc =[3; 5];
+
+    println!("{:?}", cc);
+
 
 }
