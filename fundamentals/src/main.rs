@@ -174,19 +174,43 @@ fn main() {
     let aa = [1, 2, 3, 4, 5, 6]; //o compilador sabe que se trata de um array com 6 valores
     let meses = ["Jan", "Fev", "Mar", "Abr", "Maio", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 
-    let bb: [i32; 5] = [1, 2, 3, 4]; //se vc informa o tipo e a qtdade de elementos para o compilador, ele vai reclamar
+    let bb: [i32; 5] = [1, 2, 3, 4, 5]; //se vc informa o tipo e a qtdade de elementos para o compilador, ele vai reclamar
 
     let cc = [3; 5]; //vai repedir 5 vezes o valor 3, que é o elemento
     let dd = [3, 5]; // vai imprimir o 3 e o 5
 
-    println!("{:?}", cc);
+    println!("{:?}", cc); //pode-se pegar tbm somente um elemento com cc[2]
+    println!("{:?}", meses[2]);
 
-    println!("Encerrando arrays!")
+    println!("Encerrando arrays!");
     
-    */
+     */
 
 
+    println!("Vamos as funcoes...");
 
+        /*
+        fn outra_funcao() {
+            println!("Hello World!");
+        }
+
+        fn outra_funcao(x: i32) {
+            println!("Outra funcao recebeu {x}.");
+        }
+
+        fn print_labeled_measurement(valor: f64, unidade: char) {
+            println!("A medida é: {valor} {unidade}.");
+        }
+
+        fn soma(x: i32, y: i32) -> i32 {
+            x+y //sem o ponto e virgula = é o retorno da funcao
+            //return x+y;    // ; o que acontece? = vai ter o mesmo resultado
+        }
+
+
+        */
 
     
+
+
 }
