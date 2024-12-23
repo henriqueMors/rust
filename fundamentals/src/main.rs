@@ -174,7 +174,7 @@ fn main() {
     let aa = [1, 2, 3, 4, 5, 6]; //o compilador sabe que se trata de um array com 6 valores
     let meses = ["Jan", "Fev", "Mar", "Abr", "Maio", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 
-    let bb: [i32; 5] = [1, 2, 3, 4, 5]; //se vc informa o tipo e a qtdade de elementos para o compilador, ele vai reclamar
+    let bb: [i32; 5] = [1, 2, 3, 4]; //se vc informa o tipo e a qtdade de elementos para o compilador, ele vai reclamar
 
     let cc = [3; 5]; //vai repedir 5 vezes o valor 3, que é o elemento
     let dd = [3, 5]; // vai imprimir o 3 e o 5
