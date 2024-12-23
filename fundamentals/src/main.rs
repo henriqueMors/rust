@@ -119,14 +119,14 @@ fn main() {
 
     //let yyy: <f64 as Add<i32>>::output = xxx + 88; //nao pode adicionar um inteiro a um f64
     //let yyy = xxx + 88 as f64;
-    let yyy = xxx + 88f64;
+    let yyy = xxx + 88f64; //informando o compilador que o tipo da variavel pode ser alterado sem problemas
 
     println!("trunc {}, round {}, ceil {}, floor {}", 
             xxx.trunc(), xxx.round(), xxx.ceil(), xxx.floor());
             //trunc -> desconsidera o decimal (X.0)
-            //round -> arredondar
-            //ceil  -> arredonda para cima
-            //floor -> arredonda para baixo
+            //round -> arredondar (1.4 -> 1)
+            //ceil  -> arredonda para cima (1.4 -> 2)
+            //floor -> arredonda para baixo (1.4 -> 1)
 
     println!("é isso... encerrando numéricos!")
     */
@@ -153,9 +153,40 @@ fn main() {
     println!("E aqui estao os valores booleanos...");
     */
 
-    let cc =[3; 5];
+    /*
+
+    println!("tuplas");
+
+    let tup1: (i32, f64, bool) = (500, 6.4, true); //vc pode definir o tipo da variavel
+    let tup2 = (500, 6.4, true); //o proprio rust define o tipo das variaveis
+
+    println!("{:?}", tup1);
+    println!("{:?}", tup2);
+    println!("{:?}, {:?}", tup1.0, tup1.2); //pegar osmente elementos seprados da tupla
+
+    println!("{:?}", () ); //tupla vazia
+
+    */
+
+    /*
+
+    println!("Arrays...");
+    let aa = [1, 2, 3, 4, 5, 6]; //o compilador sabe que se trata de um array com 6 valores
+    let meses = ["Jan", "Fev", "Mar", "Abr", "Maio", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+
+    let bb: [i32; 5] = [1, 2, 3, 4]; //se vc informa o tipo e a qtdade de elementos para o compilador, ele vai reclamar
+
+    let cc = [3; 5]; //vai repedir 5 vezes o valor 3, que é o elemento
+    let dd = [3, 5]; // vai imprimir o 3 e o 5
 
     println!("{:?}", cc);
 
+    println!("Encerrando arrays!")
+    
+    */
 
+
+
+
+    
 }
