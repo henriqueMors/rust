@@ -217,7 +217,6 @@ fn main() {
     */
 
 
-
     println!("Controle de fluxo...");
 
     let number = 6;
@@ -235,7 +234,6 @@ fn main() {
     }else{
         println!("{:?} é um número impar.", parimpar);
     }
-
 
     let mut number = 5;
 
