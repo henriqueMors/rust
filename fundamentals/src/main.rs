@@ -204,7 +204,7 @@ fn main() {
             println!("A medida é: {valor} {unidade}.");
         }
 
-        fn soma(x: i32, y: i32) -> i32 {
+        fn soma(x: i32, y: i32) -> i32 { //infomrando que ambos os tipos sao i32 e o resultado sera um i32
             x+y //sem o ponto e virgula = é o retorno da funcao
             //return x+y;    // ; o que acontece? = vai ter o mesmo resultado
         }
@@ -216,6 +216,8 @@ fn main() {
 
     */
 
+
+
     println!("Controle de fluxo...");
 
     let number = 6;
@@ -226,7 +228,7 @@ fn main() {
         println!("noooups!");
     }
 
-    let parimpar = 53;
+    let mut parimpar = 10;
 
     if parimpar % 2 == 0{
         println!("{} é um numero par.", parimpar);
@@ -237,10 +239,12 @@ fn main() {
 
     let mut number = 5;
 
-    while number != 0 {
-        println!("{number}");
-        number -= 1;
+    while parimpar != 0 {
+        println!("{parimpar}");
+        parimpar -= 1;
     }
+
+    
 
 
 
