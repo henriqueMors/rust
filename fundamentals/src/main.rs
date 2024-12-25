@@ -187,6 +187,8 @@ fn main() {
      */
 
 
+    /*
+
     println!("Vamos as funcoes...");
 
         /*
@@ -207,10 +209,39 @@ fn main() {
             //return x+y;    // ; o que acontece? = vai ter o mesmo resultado
         }
 
+        println!("finalizando funcoes, o que parece ser simples...");
+
 
         */
 
-    
+    */
+
+    println!("Controle de fluxo...");
+
+    let number = 6;
+
+    if number > 5 {
+        println!("Yeep!");
+    }else{
+        println!("noooups!");
+    }
+
+    let parimpar = 53;
+
+    if parimpar % 2 == 0{
+        println!("{} é um numero par.", parimpar);
+    }else{
+        println!("{:?} é um número impar.", parimpar);
+    }
+
+
+    let mut number = 5;
+
+    while number != 0 {
+        println!("{number}");
+        number -= 1;
+    }
+
 
 
 }
