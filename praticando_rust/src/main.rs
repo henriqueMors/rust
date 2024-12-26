@@ -10,7 +10,7 @@ fn main() {
     println!("::Desenvolvimento fácil::");
     println!("Par ou Ímpar?");
 
-    let number = 5; //numero do usuario
+    let number: i32 = 432; //numero do usuario
 
     let resultado = if number % 2 == 0 { //variavel tendo a atribuicao de um if
         "par" //nao precisa de println para o resultado
@@ -20,4 +20,3 @@ fn main() {
 
     println!("O número que o usuário digitou é {number}, ele é {resultado}.");
 }
-
