@@ -227,7 +227,7 @@ fn main() {
         println!("noooups!");
     }
 
-    let mut parimpar = 10;
+    let parimpar = 10;
 
     if parimpar % 2 == 0{
         println!("{} é um numero par.", parimpar);
@@ -237,9 +237,9 @@ fn main() {
 
     let mut number = 5;
 
-    while parimpar != 0 {
-        println!("{parimpar}");
-        parimpar -= 1;
+    while number != 0 {
+        println!("{number}");
+        number -= 1;
     }
 
     
