@@ -1,14 +1,16 @@
-/*
-1. Programa Fácil
-Crie um programa que peça ao usuário para inserir um número e,
-em seguida, informe se ele é par ou ímpar. Utilize as estruturas
-de controle e tipos numéricos que já aprendeu.
-*/
-
 fn main() {
 
+    /*
+
+    /*
+        1. Programa Fácil
+        Crie um programa que peça ao usuário para inserir um número e,
+        em seguida, informe se ele é par ou ímpar. Utilize as estruturas
+        de controle e tipos numéricos que já aprendeu.
+    */
+
     println!("::Desenvolvimento fácil::");
-    println!("Par ou Ímpar?");
+    println!("Par ou Ímpar");
 
     let number: i32 = 432; //numero do usuario
 
@@ -19,4 +21,10 @@ fn main() {
     };
 
     println!("O número que o usuário digitou é {number}, ele é {resultado}.");
+
+    */
+
+    
+
+
 }
