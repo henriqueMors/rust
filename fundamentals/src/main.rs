@@ -216,6 +216,7 @@ fn main() {
 
     */
 
+    /*
 
     println!("Controle de fluxo...");
 
@@ -242,8 +243,43 @@ fn main() {
         number -= 1;
     }
 
-    
+    */
 
+    /*
+
+    println!("estudando o FOR...");
+
+    let aaa = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    println!("Temos os seguintes elementos dentro da array:");
+    for elemento in aaa {       //para cada elemento, printa ele no println!
+        print!("{elemento}");   //ele vai printar a mesmo info toda vez que tiver alguma variavel na array
+    }
+
+    println!("");
+
+    for number in -8..=10 { //ele vai imprimir de 1 a 10 - =, ele vai imprimir inclusive o ulimo numero
+        print!("{number}");
+    }
+
+    println!("");
+
+    for reverse in (1..=10).rev() {
+        print!("{reverse}");
+    }
+
+
+    for i in 1..=15 {
+        println!("Tabuada do {}:", i);
+        for j in 1..=10 {
+            println!("{} x {} = {}", i, j, i * j);
+        }
+        println!("---------------");
+    }
+
+    */
+
+    
 
 
 }
