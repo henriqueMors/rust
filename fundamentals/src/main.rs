@@ -306,6 +306,8 @@ fn main() {
     
     */
 
+    /*
+
     let mut i = 0;
 
     let result = loop {
@@ -317,5 +319,45 @@ fn main() {
 
     println!("{result}");
 
+    */
+
+    /*
+
+    println!("Exemplo de label Loop...");
+
+    let mut count = 0;
+
+    'outer: loop { //'outer é um label
+        println!("Outer loop");
+        loop {
+            println!("Inner loop");
+            count += 1;
+            if count == 2 {
+                continue 'outer; // Volta diretamente para o início do loop externo
+            }
+            if count == 8 {
+                break 'outer; // Sai diretamente do loop externo
+            }
+        }
+    }
+
+    println!("Exited the loop. Count: {count}");
+
+    */
+
+        // Define um loop com um label chamado 'outer
+        'outer: loop {
+            println!("Iniciando o loop externo.");
+    
+            // Um loop interno
+            loop {
+                println!("No loop interno.");
+                break 'outer; // Sai diretamente do loop externo
+            }
+    
+            println!("Isso nunca será exibido.");
+        }
+    
+        println!("Fora do loop.");
 
 }
