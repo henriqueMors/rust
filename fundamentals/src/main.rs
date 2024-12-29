@@ -345,6 +345,8 @@ fn main() {
 
     */
 
+    /*
+
         // Define um loop com um label chamado 'outer
         'outer: loop {
             println!("Iniciando o loop externo.");
@@ -359,5 +361,34 @@ fn main() {
         }
     
         println!("Fora do loop.");
+
+    */
+
+    /*
+    
+    println!("fatorial...");
+
+    let numero = -10;
+    let resultado = fatorial_classico(numero);
+    println!("O fatorial de {numero} é {resultado}");
+
+    fn fatorial_classico(n: i64) -> i64 {
+
+        if n < 0 {
+            panic!("Fatorial não é definido para números negativos.");
+        }
+        let mut fatorial: i64 = 1;
+
+        for i in 2..=n {
+            fatorial *= i;
+        }
+        fatorial
+    }
+
+    */
+
+    
+
+
 
 }
