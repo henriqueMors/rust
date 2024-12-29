@@ -279,7 +279,43 @@ fn main() {
 
     */
 
+    /*
+
+    println!("Looping...");
+    let mut iii = 0;
     
+    loop {
+        iii += 1;
+        if iii % 2 == 0 {
+            continue;
+        }
+        println!("{iii}");
+        if iii >= 10 {
+            break;
+        }
+        println!("i = {iii}");
+    }
+
+    loop {
+        iii += 1;
+        if iii > 10 {
+            break; // Sai do loop quando iii for maior que 10
+        }
+        println!("i = {iii}"); // Imprime o valor de iii
+    }
+    
+    */
+
+    let mut i = 0;
+
+    let result = loop {
+        i += 100;
+        if i >= 100 {
+            break i * 2;
+        }
+    };
+
+    println!("{result}");
 
 
 }
