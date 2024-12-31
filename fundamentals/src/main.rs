@@ -404,15 +404,24 @@ fn main() {
     println!("Valor de s2 é {s2}");
 
     */
+    
 /* 
     let mut s3: String = String::from("alo");
+    let s4 = s3.clone(); //clona o valor para que a outra string continue válida
     println!("Valor de s3 é {s3}");
+    println!("Valor de s4 é {s4}");
 
     s3.push_str(", mundo"); //adiciona uma string a outra string
     println!("Valor de s3 é {}", s3);
-
  */
 
- 
+ /* 
+    let numeros = [1, 2, 3, 4, 5, 6];
+    let slice = &numeros [0..=4];
+
+    println!("{:?}", slice)
+ */
+    
+    
 
 }
