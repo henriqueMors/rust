@@ -404,13 +404,15 @@ fn main() {
     println!("Valor de s2 é {s2}");
 
     */
-
+/* 
     let mut s3: String = String::from("alo");
     println!("Valor de s3 é {s3}");
 
     s3.push_str(", mundo"); //adiciona uma string a outra string
     println!("Valor de s3 é {}", s3);
 
+ */
 
+ 
 
 }
