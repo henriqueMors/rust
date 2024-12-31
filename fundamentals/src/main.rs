@@ -422,8 +422,50 @@ fn main() {
     println!("{:?}", slice)
  */
 
+
+/* 
+
+ let palavra1 = String::from("conferencia"); //acentos contam como um byte, mesmo que acompanhados de alguma letra
+ let palavra2 = String::from("conferência");
  
+ let qb1 = palavra1.len();
+ let ql1 = palavra1.chars().count();
+
+ let qb2 = palavra2.len();
+ let ql2 = palavra2.chars().count();
+
+ println!("Com acento");
+ println!("Quantidade de bytes: {}\nQuantidade de letras: {}.", qb1, ql1);
+
+ println!("Sem acento");
+ println!("Quantidade de bytes: {}\nQuantidade de letras: {}.", qb2, ql2);
+
+ */
+
+/* 
     
+    let palavra1 = String::from("conferencia"); // Sem acento
+    let palavra2 = String::from("conferência"); // Com acento
+    
+    println!("Ilustrando a diferença entre bytes e caracteres na contagem. \n{} e {}\n", palavra1, palavra2);
+    
+    exibir_informacoes("Sem acento", &palavra1);
+    exibir_informacoes("Com acento", &palavra2);
+
+
+// Função que calcula e exibe informações sobre a string
+fn exibir_informacoes(descricao: &str, palavra: &String) {
+    let quantidade_bytes = palavra.len();
+    let quantidade_letras = palavra.chars().count();
+
+    println!("{}", descricao);
+    println!(
+        "Quantidade de bytes: {}\nQuantidade de letras: {}.\n",
+        quantidade_bytes, quantidade_letras
+    );
+}
+
+ */
     
 
 }
