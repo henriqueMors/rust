@@ -24,15 +24,6 @@ fn main() {
 
     */
 
-    let palavra = String::from("palavra");
-
-    let ql = contar_letras(&palavra);
-
-    println!("A palavra '{palavra}' tem exatamente '{ql}' letras.");
 
 
-}
-
-fn contar_letras(palavra: &str) -> usize {
-    palavra.chars().count()
 }
