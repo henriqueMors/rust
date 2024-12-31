@@ -387,7 +387,29 @@ fn main() {
 
     */
 
-    
+    /*
+
+    println!("Ownership: memoria heap");
+
+    let s1 = "Primeira string literal";
+    let s2 = "teste";
+
+    {
+        let s2 = "Segunda string literal";
+        println!("Valor de s1 é {s1}");
+        println!("Valor de s2 é {s2}");
+    }
+
+    println!("Valor de s1 é {s1}");
+    println!("Valor de s2 é {s2}");
+
+    */
+
+    let mut s3: String = String::from("alo");
+    println!("Valor de s3 é {s3}");
+
+    s3.push_str(", mundo"); //adiciona uma string a outra string
+    println!("Valor de s3 é {}", s3);
 
 
 
