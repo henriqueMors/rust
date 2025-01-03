@@ -468,6 +468,24 @@ fn exibir_informacoes(descricao: &str, palavra: &String) {
  */
 
 
+ use std::io;
+
+    println!("Por favor, digite seu nome:");
+
+    // Cria uma variável para armazenar a entrada do usuário
+    let mut nome = String::new();
+
+    // Lê a entrada do usuário
+    io::stdin()
+        .read_line(&mut nome)
+        .expect("Falha ao ler a entrada");
+
+    // Remove o caractere de nova linha do final da string
+    let nome = nome.trim();
+
+    // Exibe uma mensagem com o nome do usuário
+    println!("Olá, {}! Seja bem-vindo!", nome);
+
     
 
 }
