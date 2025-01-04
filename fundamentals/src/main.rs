@@ -485,6 +485,7 @@ fn exibir_informacoes(descricao: &str, palavra: &String) {
 
     // Exibe uma mensagem com o nome do usuário
     println!("Olá, {}! Seja bem-vindo!", nome);
+    dbg!("Olá, {}! Seja bem-vindo!", nome); //debug sobre o que está sendo impresso / melhor utilizado para calculos
 
     
 
