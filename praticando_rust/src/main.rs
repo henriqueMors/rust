@@ -35,7 +35,7 @@ fn main() {
             .read_line(&mut numero)             //carrega consigo uma quebra de linha* usei o .trim() para retirar a quebra de linha
             .expect("Falha ao ler a entrada");
     
-        let numero: u64 = match numero.trim().parse() {
+        let numero: u128 = match numero.trim().parse() {
             Ok(n) => n,
             Err(_) => {
                 println!("Por favor, insira um número válido.");
@@ -50,12 +50,12 @@ fn main() {
         }
     
     // Função para verificar se um número é primo
-    fn is_primo(numero: u64) -> bool {
+    fn is_primo(numero: u128) -> bool {
         if numero <= 1 {
             return false;
         }
     
-        let mut divisor: u64 = 2;
+        let mut divisor: u128 = 2;
             while divisor * divisor <= numero {
                 if numero % divisor == 0 {
                     return false;
