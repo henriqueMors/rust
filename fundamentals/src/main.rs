@@ -508,6 +508,8 @@ fn exibir_informacoes(descricao: &str, palavra: &String) {
     dbg!("Olá, {}! Seja bem-vindo!", nome); //debug sobre o que está sendo impresso / melhor utilizado para calculos
  */
 
+
+/* 
     println!("Enum...");
 
     enum Direcao {
@@ -529,6 +531,9 @@ fn exibir_informacoes(descricao: &str, palavra: &String) {
     let minha_direcao = Direcao::Leste;
 
     mover(minha_direcao);
- 
+  */
+
+
+  
 
 }
