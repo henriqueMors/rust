@@ -24,6 +24,13 @@ fn main() {
 
     */
 
+
+
+
+
+
+    /* 
+
     use std::io;
     
     println!("Bóra calcular números primos!");
@@ -65,5 +72,28 @@ fn main() {
     
         true
     }
+
+    */
+
+
+    /* 
+    println!("Testando o dbg!()");
+
+    let n1 = 9;
+    let n2 = 5;
+    let n3 = 3;
+    let n4 = 8;
+
+    let resultado = (n2*n4)+n1/n3;
+
+    dbg!("{resultado}");
+    */
+
+
+
+
+
+
+
 
 }
