@@ -507,6 +507,28 @@ fn exibir_informacoes(descricao: &str, palavra: &String) {
     println!("Olá, {}! Seja bem-vindo!", nome);
     dbg!("Olá, {}! Seja bem-vindo!", nome); //debug sobre o que está sendo impresso / melhor utilizado para calculos
  */
+
+    println!("Enum...");
+
+    enum Direcao {
+        Norte,
+        Sul,
+        Leste,
+        Oeste,
+    }
+
+    fn mover(direcao: Direcao) {
+        match direcao {
+            Direcao::Norte => println!("Indo para a direção Norte"),
+            Direcao::Sul => println!("Indo para a direção Sul"),
+            Direcao::Leste => println!("Indo para a direção Leste"),
+            Direcao::Oeste => println!("Indo para a direção Oeste"),
+        }
+    }
+
+    let minha_direcao = Direcao::Leste;
+
+    mover(minha_direcao);
  
 
 }
