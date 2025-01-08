@@ -1,6 +1,7 @@
 use std::io;
 
 fn main() {
+/* 
     println!("Advinhe o número!");
 
     println!("Insira o número que acha ser...");
@@ -14,5 +15,11 @@ fn main() {
     let inserted = guess.trim();
 
     println!("Você digitou: {}.", inserted);
+
+     */
+
+    let x = 5;
+    let y = 3;
+    println!("x = {x} e {y} + 2 = {}", y + 2);
 
 }
