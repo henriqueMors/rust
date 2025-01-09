@@ -44,6 +44,7 @@ fn main() {
 
 //CODIGO GERADO COM IA
 
+
 use std::io;
 use rand::Rng;
 use std::cmp::Ordering;
