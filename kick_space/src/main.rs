@@ -11,7 +11,7 @@ fn main() {
             .read_line(&mut challenging)
             .expect("Falha ao ler a entrada");
     let challenging: usize = match challenging.trim().parse() { // alterando o tipo da variavel para que seja lido como numero
-            Ok(num) => num, // vai tratar o erro de caso o usuario digite algo fora do necessario
+            Ok(num) => num, // vai tratar o erro de caso o usuario digite algo fora do correto (somente espaco)
             Err(_) => {
                 println!("Por favor, insira um número válido!");
                 return; // sai do programa #preciso entender melhor o uso do 'return;'#
