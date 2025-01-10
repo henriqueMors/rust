@@ -18,11 +18,11 @@ fn main() {
             }
         };
     
-        println!("Você digitou o desafio: {},\nagora, é a vez do próximo acertar essa quantidade, \nsomente segurando a barra de espaço.", challenging.trim());
+        println!("Você digitou o desafio: {},\nagora, é a vez do próximo acertar essa quantidade, \nsomente segurando a barra de espaço.", challenging);
 
     let mut key_space = String::new();
     loop {
-        println!("#Pressione somente a barra de espaço e pressione Enter quando terminar...# \nGood LucK!");
+        println!("#Pressione somente a barra de espaço e pressione Enter quando terminar# \nGood LucK!");
         key_space.clear(); // limpa a entrada anterior
         io::stdin()
             .read_line(&mut key_space)
