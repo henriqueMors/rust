@@ -533,9 +533,21 @@ fn exibir_informacoes(descricao: &str, palavra: &String) {
     mover(minha_direcao);
   */
 
+    /*
+   let mut counter = 0;
 
-   
+   let result = loop {
+    counter += 1;
 
+    println!("{counter}");
+
+        if counter == 10  {
+            break counter * 2;
+        }
+   };
+
+   println!("{result}");
+   */
 
   
 

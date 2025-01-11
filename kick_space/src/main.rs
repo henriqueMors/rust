@@ -1,5 +1,5 @@
 use std::io;
-use rand::Rng;
+use rand::{random, Rng};
 
 fn main() {
 
@@ -57,7 +57,7 @@ fn main() {
 
 fn random_number() {
     let mut rng = rand::thread_rng(); // cria um gerador de números aleatórios
-    let random_number: i32 = rng.gen_range(1..=100); // gera um número entre 1 e 100
+    let random_number: usize = rng.gen_range(1..=100); // gera um número entre 1 e 100
     println!("Número aleatório gerado: {}", random_number);
 }
 
