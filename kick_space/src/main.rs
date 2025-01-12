@@ -58,9 +58,9 @@ fn check_result(space_count: usize, challenging: usize) {
         
         let messages = vec![ // vetor com mensagens de comemoracao (nao consegui ver nenhuma em tela kkkkkkk)
             "VOCÊ ACERTOU!!!",
-            "NA MOSCA!",
+            "NA MOSCA!!!",
             "PARABÉNS, DESAFIO COMPLETO!",
-            "INCRÍVEL, VOCÊ CONSEGUIU!"
+            "IIINCRÍÍÍVEEEL, VOCÊ CONSEGUIU!"
         ];
 
         // indice aleatorio para escolher a mensagem
