@@ -3,7 +3,7 @@ use rand::{random, Rng};
 
 fn main() {
 
-    keywar_game();
+    keywar_game_challenging();
     
 }
 
@@ -18,7 +18,7 @@ fn random_number() -> i32 { // -> usado para que ele seja um return com um valor
     rng.gen_range(1..=100) // retorna um número entre 1 e 100
 }
 
-fn keywar_game() {
+fn keywar_game_challenging() {
     
     println!("Quantos espaços seu adversário deve acertar?");
 
