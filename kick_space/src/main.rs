@@ -11,7 +11,7 @@ fn main() {
             break;
         }
     }
-
+    
     println!("Jogo encerrado, até a próxima!");
 }
 
