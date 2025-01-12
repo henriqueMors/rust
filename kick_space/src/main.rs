@@ -29,15 +29,15 @@ fn instruction_01() {
 
 
 // gerador automatico
-fn random_number() -> usize { // -> usado para que ele seja um return com um valor i32
+fn random_number() -> usize { // -> usado para que ele seja um return0 com um valor i32
     let mut rng = rand::thread_rng(); // gerador de numeros aleatorios
-    rng.gen_range(1..=100) // retorna um número entre 1 e 100
+    rng.gen_range(1..=100) // retorna um numero entre 1 e 100
 }
 
 
 // verificar se o jogador deseja continuar
 fn continue_game() -> bool {
-    println!("Deseja jogar mais uma vez? (s/n)");
+    println!("Encerrar o jogo? (s/n)");
 
     let mut input = String::new();
     io::stdin()
@@ -47,11 +47,11 @@ fn continue_game() -> bool {
     let input = input.trim().to_lowercase();
 
     match input.as_str() {
-        "s" => true,  // true se o gamer quiser continuar
-        "n" => false, // false se o gamer quiser encerrar
+        "n" => true,  // true se o gamer quiser continuar
+        "s" => false, // false se o gamer quiser encerrar
         _ => {
             println!("Entrada inválida. Por favor, digite 's' para continuar ou 'n' para encerrar.");
-            continue_game() // função para pedir uma entrada válida
+            continue_game() // funcao para pedir uma entrada valida
         }
     }
 }
@@ -61,18 +61,18 @@ fn continue_game() -> bool {
 fn check_result(space_count: usize, challenging: usize) {
     if space_count == challenging {
         
-        let messages = vec![ // vetor com mensagens de comemoração
+        let messages = vec![ // vetor com mensagens de comemoracao (nao consegui ver nenhuma em tela kkkkkkk)
             "VOCÊ ACERTOU!!!",
             "NA MOSCA!",
             "PARABÉNS, DESAFIO COMPLETO!",
             "INCRÍVEL, VOCÊ CONSEGUIU!"
         ];
 
-        // gera um índice aleatório para escolher a mensagem
+        // indice aleatorio para escolher a mensagem
         let mut rng = rand::thread_rng();
-        let random_index = rng.gen_range(0..messages.len()); // Gera um índice válido para o vetor
+        let random_index = rng.gen_range(0..messages.len()); // escolhe um índice válido para o vetor
 
-        // exibe uma mensagem aleatória
+        // exibe uma mensagem aleatoria
         println!("{}", messages[random_index]);
     } else {
         println!("Errooooooooooouu, a quantidade era de {}!", challenging);
@@ -84,7 +84,7 @@ fn keywar_game_random_number() {
     
     println!("Como está sua percepção?");
 
-    let challenging = random_number(); // o desafiante digita quantidade de a ser acertada pelo desafiado
+    let challenging = random_number(); // o sistema gera um numero de forma randomica
     
         println!("Hora de testar! Seu desafio: {}!", challenging);
 
@@ -153,9 +153,10 @@ fn keywar_game_challenging() {
             c é uma configuracao de caracter (mais ou menos o que o loop faz)
     */
 
-    check_result(space_count, challenging); // verificação entre os resultados obtidos para retornar a msg final
+    check_result(space_count, challenging); // verificacao entre os resultados obtidos para retornar a msg final
 
     println!("Você digitou {space_count} caracteres de espaço."); // mensagem de encerramento
+
 }
 
 
@@ -165,6 +166,7 @@ fn game_mode() {
     println!("Escolha o modo de jogo:");
     println!("1 - Número aleatório");
     println!("2 - Desafiado");
+    println!("0 - Sair do jogo");
 
     let mut choice = String::new();
     io::stdin()
@@ -173,13 +175,16 @@ fn game_mode() {
 
     match choice.trim() {
         "1" => {
-            println!("Você escolheu o Modo Clássico!");
+            println!("Você escolheu o modo Número Randômico!");
             keywar_game_random_number(); // modo numero randomico
             
         }
         "2" => {
-            println!("Você escolheu o Novo Modo de Jogo!");
+            println!("Você escolheu o modo Desafio!");
             keywar_game_challenging(); // modo desafio
+        }
+        "0" => {
+            println!("Você escolheu sair do jogo."); // encerra o jogo
         }
         _ => {
             println!("Opção inválida. Por favor, escolha novamente.");
