@@ -31,7 +31,7 @@ fn keywar_title() {
 
 
 // (uso futuro) gerador automático
-fn random_number() -> i32 { // -> usado para que ele seja um return com um valor i32
+fn _random_number() -> i32 { // -> usado para que ele seja um return com um valor i32
     let mut rng = rand::thread_rng(); // gerador de numeros aleatorios
     rng.gen_range(1..=100) // retorna um número entre 1 e 100
 }
@@ -114,4 +114,12 @@ fn keywar_game_challenging() {
     }
 
     println!("Você digitou {space_count} caracteres de espaço."); // mensagem de encerramento
+}
+
+
+
+
+// selecionar o modo do game
+fn game_mode() {
+
 }
