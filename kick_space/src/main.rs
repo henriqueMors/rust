@@ -11,6 +11,7 @@ fn main() {
         io::stdin()
             .read_line(&mut challenging)
             .expect("Falha ao ler a entrada");
+        
     let challenging: usize = match challenging.trim().parse() { // alterando o tipo da variavel para que seja lido como numero
             Ok(num) => num, // vai tratar o erro de caso o usuario digite algo fora do correto (somente espaco)
             Err(_) => {
@@ -55,9 +56,9 @@ fn main() {
 }
 
 
-fn random_number() {
-    let mut rng = rand::thread_rng(); // cria um gerador de números aleatórios
-    let random_number: usize = rng.gen_range(1..=100); // gera um número entre 1 e 100
-    println!("Número aleatório gerado: {}", random_number);
+
+fn random_number() -> usize {
+    let mut rng = rand::thread_rng(); // gerador de numeros aleatorios
+    rng.gen_range(1..=100) // retorna um número entre 1 e 100
 }
 
