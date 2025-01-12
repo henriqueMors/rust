@@ -1,3 +1,5 @@
+use std::io;
+
 fn main() {
 
     /*
@@ -88,11 +90,6 @@ fn main() {
 
     dbg!("{resultado}");
     */
-
-
-
-
-
 
 
 

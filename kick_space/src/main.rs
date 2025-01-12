@@ -2,13 +2,12 @@ use std::io;
 use rand::Rng;
 
 
-
 fn main() {
 
     keywar_title();
 
     loop {
-        keywar_game_challenging(); // aciona o jogo principal
+        game_mode(); // aciona o jogo principal
         if !continue_game() { // verifica se o jogador quer continuar
             break;
         }
@@ -18,33 +17,25 @@ fn main() {
 }
 
 
-
-
-
 // para gerar o nome do jogo quando for necessario
 fn keywar_title() {
     println!("@#=-KEY WAR-=#@");
 }
 
+// para imprimir uma instrucao de jogo
 fn instruction_01() {
     println!("#Pressione somente a barra de espaço e pressione Enter quando terminar# \nGood LucK!");
 }
 
 
-
-
-
-// gerador automático
+// gerador automatico
 fn random_number() -> usize { // -> usado para que ele seja um return com um valor i32
     let mut rng = rand::thread_rng(); // gerador de numeros aleatorios
     rng.gen_range(1..=100) // retorna um número entre 1 e 100
 }
 
 
-
-
-
-// Função para verificar se o jogador deseja continuar
+// verificar se o jogador deseja continuar
 fn continue_game() -> bool {
     println!("Deseja jogar mais uma vez? (s/n)");
 
@@ -66,15 +57,36 @@ fn continue_game() -> bool {
 }
 
 
+// verifica o resultado e exibe uma mensagem
+fn check_result(space_count: usize, challenging: usize) {
+    if space_count == challenging {
+        
+        let messages = vec![ // vetor com mensagens de comemoração
+            "VOCÊ ACERTOU!!!",
+            "NA MOSCA!",
+            "PARABÉNS, DESAFIO COMPLETO!",
+            "INCRÍVEL, VOCÊ CONSEGUIU!"
+        ];
+
+        // gera um índice aleatório para escolher a mensagem
+        let mut rng = rand::thread_rng();
+        let random_index = rng.gen_range(0..messages.len()); // Gera um índice válido para o vetor
+
+        // exibe uma mensagem aleatória
+        println!("{}", messages[random_index]);
+    } else {
+        println!("Errooooooooooouu, a quantidade era de {}!", challenging);
+    }
+}
 
 
 fn keywar_game_random_number() {
     
     println!("Como está sua percepção?");
 
-    let mut challenging = random_number(); // o desafiante digita quantidade de a ser acertada pelo desafiado
+    let challenging = random_number(); // o desafiante digita quantidade de a ser acertada pelo desafiado
     
-        println!("Hora de testar! Seu desafio: {}!\n.", challenging);
+        println!("Hora de testar! Seu desafio: {}!", challenging);
 
     let mut key_space = String::new();
     loop {
@@ -92,24 +104,11 @@ fn keywar_game_random_number() {
     }
 
     let space_count = key_space.chars().filter(|&c| c == ' ').count();
-    /*
-            space_count recebe a quantidade de espacos digitados.
-            key_space esta configurado para receber e aceitar 
-            o tipo de caracter espaco, inserido no teclado.
-            c é uma configuracao de caracter (mais ou menos o que o loop faz)
-    */
 
-    if space_count == challenging { // um IF/ELSE somente para um comparativo
-        println!("VOCÊ ACERTOU!!!");
-    } else {
-        println!("Errooooooooooouu, a quantidade era de {challenging}!");
-    }
+    check_result(space_count, challenging); // verificação entre os resultados obtidos para retornar a msg final
 
     println!("Você digitou {space_count} caracteres de espaço."); // mensagem de encerramento
 }
-
-
-
 
 
 fn keywar_game_challenging() {
@@ -154,19 +153,37 @@ fn keywar_game_challenging() {
             c é uma configuracao de caracter (mais ou menos o que o loop faz)
     */
 
-    if space_count == challenging { // um IF/ELSE somente para um comparativo
-        println!("VOCÊ ACERTOU!!!");
-    } else {
-        println!("Errooooooooooouu, a quantidade era de {challenging}!");
-    }
+    check_result(space_count, challenging); // verificação entre os resultados obtidos para retornar a msg final
 
     println!("Você digitou {space_count} caracteres de espaço."); // mensagem de encerramento
 }
 
 
-
-
 // selecionar o modo do game
-fn _game_mode() {
+fn game_mode() {
+
+    println!("Escolha o modo de jogo:");
+    println!("1 - Modo Clássico");
+    println!("2 - Novo Modo de Jogo");
+
+    let mut choice = String::new();
+    io::stdin()
+        .read_line(&mut choice)
+        .expect("Erro ao ler a entrada");
+
+    match choice.trim() {
+        "1" => {
+            println!("Você escolheu o Modo Clássico!");
+            keywar_game_challenging(); // Chama o modo clássico
+        }
+        "2" => {
+            println!("Você escolheu o Novo Modo de Jogo!");
+            new_game_mode(); // Chama o novo modo
+        }
+        _ => {
+            println!("Opção inválida. Por favor, escolha novamente.");
+            _game_mode(); // Rechama a função para uma entrada válida
+        }
+    }
 
 }
