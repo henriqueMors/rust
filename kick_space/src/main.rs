@@ -3,8 +3,8 @@ use rand::{random, Rng};
 
 fn main() {
 
-    println!("@#=-KEY WAR-=#@"); // nome do jogo
-
+    keywar(); // nome do jogo
+    
     println!("Quantos espaços seu adversário deve acertar?");
 
     let mut challenging = String::new(); // o desafiante digita quantidade de a ser acertada pelo desafiado
@@ -55,9 +55,13 @@ fn main() {
     
 }
 
+// para gerar o nome do jogo quando for necessario
+fn keywar() {
+    println!("@#=-KEY WAR-=#@");
+}
 
-
-fn random_number() -> usize {
+// uso futuro ... gerador automático
+fn random_number() -> i32 { // -> usado para que ele seja um return com um valor i32
     let mut rng = rand::thread_rng(); // gerador de numeros aleatorios
     rng.gen_range(1..=100) // retorna um número entre 1 e 100
 }
