@@ -163,8 +163,8 @@ fn keywar_game_challenging() {
 fn game_mode() {
 
     println!("Escolha o modo de jogo:");
-    println!("1 - Modo Clássico");
-    println!("2 - Novo Modo de Jogo");
+    println!("1 - Número aleatório");
+    println!("2 - Desafiado");
 
     let mut choice = String::new();
     io::stdin()
@@ -174,15 +174,16 @@ fn game_mode() {
     match choice.trim() {
         "1" => {
             println!("Você escolheu o Modo Clássico!");
-            keywar_game_challenging(); // Chama o modo clássico
+            keywar_game_random_number(); // modo numero randomico
+            
         }
         "2" => {
             println!("Você escolheu o Novo Modo de Jogo!");
-            new_game_mode(); // Chama o novo modo
+            keywar_game_challenging(); // modo desafio
         }
         _ => {
             println!("Opção inválida. Por favor, escolha novamente.");
-            _game_mode(); // Rechama a função para uma entrada válida
+            game_mode(); // solicita uma entrada válida
         }
     }
 
