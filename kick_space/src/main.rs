@@ -1,22 +1,69 @@
 use std::io;
-use rand::{random, Rng};
+use rand::Rng;
+
+
 
 fn main() {
 
-    keywar_game_challenging();
-    
+    keywar_title();
+
+    loop {
+        keywar_game_challenging(); // aciona o jogo principal
+        if !continue_game() { // verifica se o jogador quer continuar
+            break;
+        }
+    }
+
+    println!("Jogo encerrado, até a próxima!");
 }
 
+
+
+
+
 // para gerar o nome do jogo quando for necessario
-fn keywar() {
+fn keywar_title() {
     println!("@#=-KEY WAR-=#@");
 }
 
-// uso futuro ... gerador automático
+
+
+
+
+// (uso futuro) gerador automático
 fn random_number() -> i32 { // -> usado para que ele seja um return com um valor i32
     let mut rng = rand::thread_rng(); // gerador de numeros aleatorios
     rng.gen_range(1..=100) // retorna um número entre 1 e 100
 }
+
+
+
+
+
+// Função para verificar se o jogador deseja continuar
+fn continue_game() -> bool {
+    println!("Deseja jogar mais uma vez? (s/n)");
+
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Falha ao ler a entrada");
+
+    let input = input.trim().to_lowercase();
+
+    match input.as_str() {
+        "s" => true,  // true se o gamer quiser continuar
+        "n" => false, // false se o gamer quiser encerrar
+        _ => {
+            println!("Entrada inválida. Por favor, digite 's' para continuar ou 'n' para encerrar.");
+            continue_game() // função para pedir uma entrada válida
+        }
+    }
+}
+
+
+
+
 
 fn keywar_game_challenging() {
     
@@ -68,4 +115,3 @@ fn keywar_game_challenging() {
 
     println!("Você digitou {space_count} caracteres de espaço."); // mensagem de encerramento
 }
-
