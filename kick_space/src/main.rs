@@ -1,7 +1,6 @@
 use std::io;
 use rand::Rng;
 
-
 fn main() {
 
     keywar_title();
@@ -16,7 +15,6 @@ fn main() {
     println!("Jogo encerrado, até a próxima!");
 }
 
-
 // para gerar o nome do jogo quando for necessario
 fn keywar_title() {
     println!("@#=-KEY WAR-=#@");
@@ -27,13 +25,11 @@ fn instruction_01() {
     println!("#Pressione somente a barra de espaço e pressione Enter quando terminar# \nGood LucK!");
 }
 
-
 // gerador automatico
 fn random_number() -> usize { // -> usado para que ele seja um return0 com um valor i32
     let mut rng = rand::thread_rng(); // gerador de numeros aleatorios
     rng.gen_range(1..=100) // retorna um numero entre 1 e 100
 }
-
 
 // verificar se o jogador deseja continuar
 fn continue_game() -> bool {
@@ -56,7 +52,6 @@ fn continue_game() -> bool {
     }
 }
 
-
 // verifica o resultado e exibe uma mensagem
 fn check_result(space_count: usize, challenging: usize) {
     if space_count == challenging {
@@ -78,7 +73,6 @@ fn check_result(space_count: usize, challenging: usize) {
         println!("Errooooooooooouu, a quantidade era de {}!", challenging);
     }
 }
-
 
 fn keywar_game_random_number() {
     
@@ -109,7 +103,6 @@ fn keywar_game_random_number() {
 
     println!("Você digitou {space_count} caracteres de espaço."); // mensagem de encerramento
 }
-
 
 fn keywar_game_challenging() {
     
@@ -158,7 +151,6 @@ fn keywar_game_challenging() {
     println!("Você digitou {space_count} caracteres de espaço."); // mensagem de encerramento
 
 }
-
 
 // selecionar o modo do game
 fn game_mode() {
