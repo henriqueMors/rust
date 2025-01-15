@@ -5,10 +5,10 @@ pub fn continue_game() -> bool { //verifica se quer continuar ou sair do jogo
 
     let mut input = String::new(); //verifica o caractere inserido para decidir o match (switch)
     io::stdin()
-        .read_line(&mut input)
+        .read_line(&mut input) //armazenapara verificar a opcao de continuar ou sair do jogo
         .expect("Falha ao ler a entrada");
 
-    match input.trim().to_lowercase().as_str() {
+    match input.trim().to_lowercase().as_str() { //match funciona como switch em java, js, py
         "n" => true,
         "s" => false,
         _ => {
