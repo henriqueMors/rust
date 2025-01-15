@@ -1,3 +1,4 @@
+//main é o arquivo principal, aqui executa-se todo o software
 mod game;
 
 use game::game_mode::game_mode;
