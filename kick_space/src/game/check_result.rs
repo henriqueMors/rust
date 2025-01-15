@@ -1,7 +1,7 @@
 //checagem de selecao de mensagem conforme resultado
 use rand::Rng; //biblioteca para obter um numero randomico
 
-pub fn check_result(space_count: usize, challenging: usize) {
+pub fn check_result(space_count: usize, challenging: usize) { //pub para tornar a funcao disponivel em main.rs
     if space_count == challenging {
         let messages = vec![ //vetor para para agrupar as mensagem que serao sortidas
             "VOCÊ ACERTOU!!!",
