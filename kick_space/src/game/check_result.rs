@@ -1,6 +1,6 @@
 //checagem de selecao de mensagem conforme resultado
 use rand::Rng; //biblioteca para obter um numero randomico
-//use colored::*; //adiciona cores ao terminal
+use colored::*; //adiciona cores ao terminal
 
 pub fn check_result(space_count: usize, challenging: usize) { //pub para tornar a funcao disponivel em main.rs
     if space_count == challenging {
