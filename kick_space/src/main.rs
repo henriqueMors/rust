@@ -6,7 +6,7 @@ use game::game_mode::game_mode;
 use game::continue_game::continue_game;
 
 fn main() {
-    println!("@#=-KEY WAR-=#@".green().bold());
+    println!("{}","@#=-KEY WAR-=#@".red().bold());
 
     loop {
         game_mode();
