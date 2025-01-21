@@ -1,6 +1,5 @@
 //checagem de selecao de mensagem conforme resultado
 use rand::Rng; //biblioteca para obter um numero randomico
-use colored::*; //adiciona cores ao terminal
 
 pub fn check_result(space_count: usize, challenging: usize) { //pub para tornar a funcao disponivel em main.rs
     if space_count == challenging {
@@ -16,6 +15,6 @@ pub fn check_result(space_count: usize, challenging: usize) { //pub para tornar 
         let random_index = rng.gen_range(0..messages.len());
         println!("{}", messages[random_index]);
     } else {
-        println!("Errooooooooooouu, a quantidade era de {}!", challenging); //mensagem em caso de erro
+        println!(,"Errooooooooooouu, a quantidade era de {}!", challenging); //mensagem em caso de erro
     }
 }

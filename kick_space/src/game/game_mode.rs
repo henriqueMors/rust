@@ -2,7 +2,6 @@ use crate::game::keywar_game_random_number::keywar_game_random_number;
 use crate::game::keywar_game_challenging::keywar_game_challenging;
 //CRATE serve para quando quiser acessar itens no escopo do módulo raiz
 
-
 //seleciona o modo de jogo
 pub fn game_mode() { //define e apresenta os modos de jogo
     use std::io;
