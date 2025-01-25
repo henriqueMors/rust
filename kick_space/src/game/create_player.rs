@@ -1,17 +1,17 @@
 use diesel::prelude::*;
-use crate::schema::players;
+use crate::schema::bestplayers;
 
 #[derive(Insertable)]
-#[table_name = "players"]
+#[table_name = "bestplayers"]
 pub struct NewPlayer<'a> {
     pub name: &'a str,
-    pub score: i32,
+    pub quantity: i32,
 }
 
 pub fn create_player(conn: &SqliteConnection, name: &str) {
-    let new_player = NewPlayer { name, score: 0 };
+    let new_player = NewPlayer { name, quantity: 0 };
 
-    diesel::insert_into(players::table)
+    diesel::insert_into(bestplayers::table)
         .values(&new_player)
         .execute(conn)
         .expect("Erro ao inserir jogador");
