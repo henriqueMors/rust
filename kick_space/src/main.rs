@@ -19,8 +19,8 @@ fn main() {
     let connection = establish_connection();
     println!("Conexão com o banco de dados estabelecida!");
 
-    let connection = establish_connection();
-    create_player(&connection, "Alice");
+    let mut connection = establish_connection();
+    create_player (&mut connection, "Alice");
     println!("Jogador Alice criado!");
 
     loop {
