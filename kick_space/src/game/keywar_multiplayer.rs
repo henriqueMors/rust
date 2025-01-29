@@ -4,9 +4,8 @@ use std::io;
 
 pub fn keywar_multiplayer() {
     println!("Modo Multiplayer Selecionado!");
-
-    // Pede o número de jogadores
-    println!("Digite o número de jogadores:");
+    
+    println!("Digite o número de jogadores:"); //pede o numero de jogadores
     let num_players: usize = loop {
         let mut input = String::new();
         io::stdin().read_line(&mut input).expect("Erro ao ler entrada");
@@ -45,7 +44,7 @@ pub fn keywar_multiplayer() {
         scores.push((player.clone(), guess));
     }
 
-    // Verifica quem chegou mais próximo ao valor-alvo
+    //verifica quem chegou mais proximo ao valor-alvo
     let (mut closest_player, mut smallest_difference) = scores[0].clone();
     let mut smallest_difference_value = (smallest_difference as isize - target as isize).abs();
 
@@ -58,19 +57,19 @@ pub fn keywar_multiplayer() {
         }
     }
 
-    // Exibe o vencedor
+    //exibe o vencedor
     println!(
         "O valor-alvo era: {}. O vencedor é {} com a tentativa de {}!",
         target, closest_player, smallest_difference
     );
 
-    // Exibe as pontuações
+    //exibe as pontuações
     println!("Pontuações:");
     for (player, guess) in &scores {
         let difference = (*guess as isize - target as isize).abs();
         println!("{} tentou {}, diferença de {}", player, guess, difference);
     }
 
-    // Verifica o resultado final
+    //verifica o resultado final
     check_result(target, smallest_difference);
 }
