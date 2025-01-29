@@ -10,4 +10,3 @@ pub mod instruction;
 pub mod continue_game;
 pub mod check_result;
 pub mod create_player;
-

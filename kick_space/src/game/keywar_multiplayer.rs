@@ -1,54 +1,76 @@
-use crate::random_number::random_number;
-use crate::instruction::instruction;
-use crate::check_result::check_result;
+use crate::game::random_number::random_number;
+use crate::game::check_result::check_result;
+use std::io;
 
 pub fn keywar_multiplayer() {
     println!("Modo Multiplayer Selecionado!");
 
+    // Pede o número de jogadores
     println!("Digite o número de jogadores:");
-    let num_players = instruction("Digite o número de jogadores:").parse::<usize>().unwrap_or(0); //informa o numero de jogadores
-    if num_players == 0 {
-        println!("Número de jogadores inválido.");
-        return;
-    }
+    let num_players: usize = loop {
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).expect("Erro ao ler entrada");
+        match input.trim().parse::<usize>() {
+            Ok(num) if num > 0 => break num,
+            _ => println!("Número inválido. Digite um número maior que 0."),
+        }
+    };
 
     let mut players = Vec::new();
-    for i in 1..=num_players { //registrar nomes dos jogadores
-        let player_name = instruction(&format!("Digite o nome do jogador {}:", i));
-        players.push(player_name);
+
+    // Registra os nomes dos jogadores
+    for i in 1..=num_players {
+        println!("Digite o nome do jogador {}:", i);
+        let mut player_name = String::new();
+        io::stdin().read_line(&mut player_name).expect("Erro ao ler entrada");
+        players.push(player_name.trim().to_string());
     }
 
     let target = random_number();
     println!("O valor-alvo foi definido! Vamos começar!");
 
-    let mut scores = Vec::new(); //registra as tentativas
+    let mut scores = Vec::new();
+
+    // Cada jogador faz uma tentativa
     for player in &players {
-        println!("{}: Faça sua tentativa:", player);
-        let guess = instruction(&format!("Tentativa de {}: ", player)).parse::<usize>().unwrap_or(0);
+        println!("Tentativa de {}: ", player);
+        let guess: usize = loop {
+            let mut input = String::new();
+            io::stdin().read_line(&mut input).expect("Erro ao ler entrada");
+            match input.trim().parse::<usize>() {
+                Ok(num) => break num,
+                _ => println!("Tentativa inválida. Digite um número válido."),
+            }
+        };
         scores.push((player.clone(), guess));
     }
 
-    let mut closest_player = &scores[0]; //verifica quem chegou mais proximo
-    let mut smallest_difference = (scores[0].1 as isize - target as isize).abs();
+    // Verifica quem chegou mais próximo ao valor-alvo
+    let (mut closest_player, mut smallest_difference) = scores[0].clone();
+    let mut smallest_difference_value = (smallest_difference as isize - target as isize).abs();
 
     for (player, guess) in &scores {
         let difference = (*guess as isize - target as isize).abs();
-        if difference < smallest_difference {
-            smallest_difference = difference;
-            closest_player = &(player.clone(), *guess);
+        if difference < smallest_difference_value {
+            smallest_difference = *guess;
+            closest_player = player.clone();
+            smallest_difference_value = difference;
         }
     }
 
-    println!( //parciais
+    // Exibe o vencedor
+    println!(
         "O valor-alvo era: {}. O vencedor é {} com a tentativa de {}!",
-        target, closest_player.0, closest_player.1
+        target, closest_player, smallest_difference
     );
 
-    println!("Pontuações:"); //exibe pontuacao
+    // Exibe as pontuações
+    println!("Pontuações:");
     for (player, guess) in &scores {
         let difference = (*guess as isize - target as isize).abs();
         println!("{} tentou {}, diferença de {}", player, guess, difference);
     }
 
-    check_result(target, closest_player.1); //check final
+    // Verifica o resultado final
+    check_result(target, smallest_difference);
 }
