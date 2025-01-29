@@ -8,6 +8,10 @@ use colored::*;
 use db::establish_connection;
 use game::game_mode::game_mode;
 use game::continue_game::continue_game;
+use game::keywar_game_random_number::keywar_game_random_number;
+use game::keywar_game_challenging::keywar_game_challenging;
+use game::keywar_multiplayer::keywar_multiplayer;
+
 
 fn main() {
     println!("{}","@#=-KEY WAR-=#@".red().bold());
