@@ -1,8 +1,5 @@
 use std::io; //biblioteca para insercao de caracteres pelo teclado
 
-use crate::game::game_mode::game_mode;
-
-
 pub fn continue_game() -> Option<String> {
     println!("\nO que você deseja fazer?");
     println!("A - Jogar novamente");
@@ -17,14 +14,11 @@ pub fn continue_game() -> Option<String> {
     let input = input.trim().to_uppercase();
 
     match input.as_str() {
-        "A" => Some("A".to_string()),
-        "C" => {
-            game_mode(); // Redireciona para o menu de modos
-            None // Retorna None para voltar ao menu principal
-        },
+        "A" => Some("A".to_string()), // Reinicia o mesmo modo
+        "C" => Some("C".to_string()), // Volta ao menu para mudar o modo
         "E" => {
             println!("Jogo encerrado. Até a próxima!");
-            None
+            None // Encerra o jogo
         },
         _ => {
             println!("Opção inválida. Tente novamente.");
