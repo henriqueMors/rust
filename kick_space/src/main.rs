@@ -1,30 +1,22 @@
-//main é o arquivo principal, aqui executa-se todo o software
+// main.rs
 mod game;
 mod db;
 mod schema;
 
-use game::create_player::create_player;
 use colored::*;
-use db::establish_connection;
 use game::game_mode::game_mode;
 use game::continue_game::continue_game;
 use game::keywar_game_random_number::keywar_game_random_number;
 use game::keywar_game_challenging::keywar_game_challenging;
 use game::keywar_multiplayer::keywar_multiplayer;
 
-
 fn main() {
-    println!("{}","@#=-KEY WAR-=#@".red().bold());
-
-    let connection = establish_connection();
-    println!("Conexão com o banco de dados estabelecida!");
-    
-    create_player (&mut connection, "Alice");
-    println!("Jogador Alice criado!");
-
-    let selected_mode = game_mode(); // Permite escolher um modo de jogo
+    println!("{}", "@#=-KEY WAR-=#@".red().bold());
 
     loop {
+        // Escolhe o modo de jogo
+        let selected_mode = game_mode();
+
         // Inicia o jogo baseado no modo escolhido
         match selected_mode.as_str() {
             "random" => keywar_game_random_number(),
@@ -38,8 +30,8 @@ fn main() {
 
         // Pergunta ao jogador o que ele deseja fazer
         match continue_game() {
-            Some(action) if action == "again" => continue,  // Reinicia o mesmo modo
-            Some(action) if action == "change" => break,    // Volta ao menu para mudar o modo
+            Some(action) if action == "A" => continue,  // Reinicia o mesmo modo
+            Some(action) if action == "C" => continue, // Volta ao menu para mudar o modo
             None => {
                 println!("Jogo encerrado! Até a próxima.");
                 return;
@@ -48,4 +40,3 @@ fn main() {
         }
     }
 }
-

@@ -4,15 +4,15 @@ use crate::game::random_number::random_number;
 use crate::game::instruction::instruction_01;
 use crate::game::check_result::check_result;
 
-pub fn keywar_game_random_number() { //modo de jogo com numero randomico
+pub fn keywar_game_random_number() {
     println!("Como está sua percepção?");
-    let challenging = random_number(); //gera um numero randomico e armazena em challenging ... entre 1 e 100 (pode-se aumentar)
+    let challenging = random_number(); // Gera um número aleatório entre 1 e 100
 
     println!("Hora de testar! Seu desafio: {}!", challenging);
 
-    let mut key_space = String::new(); //faz o armazenamento dos espacos digitados
+    let mut key_space = String::new();
     loop {
-        instruction_01(); //instrucao de jogo
+        instruction_01();
         key_space.clear();
         io::stdin()
             .read_line(&mut key_space)

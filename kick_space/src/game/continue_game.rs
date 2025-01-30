@@ -3,32 +3,32 @@ use std::io; //biblioteca para insercao de caracteres pelo teclado
 use crate::game::game_mode::game_mode;
 
 
-pub fn continue_game() -> Option<String> { //verifica se quer continuar ou sair do jogo
+pub fn continue_game() -> Option<String> {
     println!("\nO que você deseja fazer?");
     println!("A - Jogar novamente");
     println!("C - Escolher outro modo de jogo");
     println!("E - Encerrar o jogo");
 
-    let mut input = String::new(); //verifica o caractere inserido para decidir o match (switch)
+    let mut input = String::new();
     io::stdin()
-        .read_line(&mut input) //armazenapara verificar a opcao de continuar ou sair do jogo
+        .read_line(&mut input)
         .expect("Erro ao ler a entrada");
 
-    let input = input.trim().to_uppercase(); // normaliza entrada para uppercase
+    let input = input.trim().to_uppercase();
 
     match input.as_str() {
-        "A" => Some("A".to_string()), //retorna a escolha como Some(String)
+        "A" => Some("A".to_string()),
         "C" => {
-            game_mode(); //redireciona para o menu de modos
-            Some("C".to_string()) //continua com a escolha
+            game_mode(); // Redireciona para o menu de modos
+            None // Retorna None para voltar ao menu principal
         },
         "E" => {
             println!("Jogo encerrado. Até a próxima!");
-            None //indica que o jogo deve encerrar
+            None
         },
         _ => {
             println!("Opção inválida. Tente novamente.");
-            continue_game() //repete o menu ate ter uma entrada valida
+            continue_game() // Repete o menu até ter uma entrada válida
         }
     }
 }
