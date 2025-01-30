@@ -8,7 +8,7 @@ pub fn keywar_game_random_number() {
     println!("Como está sua percepção?");
     let challenging = random_number(); // Gera um número aleatório entre 1 e 100
 
-    println!("Hora de testar! Seu desafio: {}!", challenging);
+    println!("Hora de testar! Seu desafio: {} espaços!", challenging);
 
     let mut key_space = String::new();
     loop {
