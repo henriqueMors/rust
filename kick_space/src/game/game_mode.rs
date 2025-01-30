@@ -3,7 +3,7 @@ use crate::game::keywar_game_challenging::keywar_game_challenging;
 use crate::game::keywar_multiplayer::keywar_multiplayer;
 use std::io;
 
-pub fn game_mode() {
+pub fn game_mode() -> String {
     loop {
         println!("Escolha o modo de jogo:");
         println!("1 - Número aleatório");
