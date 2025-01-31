@@ -1,9 +1,9 @@
 //digitar instrucoes que aparecerao em tela
 
 pub fn instruction_01() {
-    println!("#Pressione somente a barra de espaço e pressione Enter quando terminar# \nGood LucK!");
+    println!("#Pressione a barra de espaço e tecle Enter ao terminar# \nGood LucK!");
 }
 
 pub fn _instruction_02() {
-    println!("#Modo Desafiado: Tente acertar o número exato de espaços!# \nBoa sorte!");
+    println!("#Modo Desafiador: Tente acertar o número exato de espaços!# \nBoa sorte!");
 }
