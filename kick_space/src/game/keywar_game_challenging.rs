@@ -3,7 +3,7 @@ use crate::game::instruction::instruction_01;
 use crate::game::check_result::check_result;
 
 pub fn keywar_game_challenging() { //metodo de jogo com desafio
-    println!("Quantos espaços seu adversário deve acertar?");
+    println!("Peça para alguem inserir um valor?");
     let mut challenging = String::new(); //armazena uma quantidade numerica para desafio
     io::stdin()
         .read_line(&mut challenging)
@@ -18,8 +18,7 @@ pub fn keywar_game_challenging() { //metodo de jogo com desafio
     };
 
     println!(
-        "Você digitou o desafio: {},\nagora, é a vez do próximo acertar essa quantidade, \nsomente segurando a barra de espaço.",
-        challenging
+        "Você foi desafiado na quantidade de {}!",challenging
     );
 
     let mut key_space = String::new(); //sera inserido os espaco

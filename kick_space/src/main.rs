@@ -26,7 +26,7 @@ fn main() {
                 "challenging" => keywar_game_challenging(),
                 "multiplayer" => keywar_multiplayer(),
                 _ => {
-                    println!("Modo inválido!");
+                    println!("#ERR: Modo inválido!");
                     break;
                 }
             }
@@ -36,7 +36,7 @@ fn main() {
                 Some(action) if action == "A" => continue,  // Reinicia o mesmo modo
                 Some(action) if action == "C" => break,    // Volta ao menu para mudar o modo
                 None => {
-                    println!("Jogo encerrado! Até a próxima.");
+                    println!("Até breve.");
                     return;
                 }
                 _ => unreachable!(),

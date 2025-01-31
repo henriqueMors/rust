@@ -13,8 +13,8 @@ pub fn check_result(space_count: usize, challenging: usize) {
         let mut rng = rand::thread_rng();
         let random_index = rng.gen_range(0..messages.len());
         println!("{}", messages[random_index]);
-    } else if (space_count as isize - challenging as isize).abs() <= 2 {
-        println!("Quase lá! Você digitou {}, mas o desafio era {}. Tente novamente!", space_count, challenging);
+    } else if (space_count as isize - challenging as isize).abs() <= 6 {
+        println!("Quase lá! O desafio era {}. Tente novamente!", challenging);
     } else {
         println!("Errooooooooooouu, a quantidade era de {}!", challenging);
     }

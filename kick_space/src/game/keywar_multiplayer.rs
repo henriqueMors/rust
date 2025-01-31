@@ -17,8 +17,8 @@ pub fn keywar_multiplayer() {
 
     let mut players = Vec::new();
 
-    // Registra os nomes dos jogadores
-    for i in 1..=num_players {
+    //registra os nomes dos jogadores
+    for i in 1..= num_players {
         println!("Digite o nome do jogador {}:", i);
         let mut player_name = String::new();
         io::stdin().read_line(&mut player_name).expect("Erro ao ler entrada");
