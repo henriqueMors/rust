@@ -95,7 +95,4 @@ pub fn keywar_multiplayer() {
             i + 1, player, guess, difference
         );
     }
-
-    // Verifica o resultado final
-    check_result(challenging, closest_guess);
 }
