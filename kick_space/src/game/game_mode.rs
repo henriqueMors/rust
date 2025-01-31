@@ -2,6 +2,7 @@ use std::io;
 
 pub fn game_mode() -> String {
     loop {
+        println!("#####################################");
         println!("Escolha o modo de jogo:");
         println!("1 - Número aleatório");
         println!("2 - Desafiante");
@@ -25,5 +26,7 @@ pub fn game_mode() -> String {
                 println!("Opção inválida. Por favor, escolha novamente.");
             }
         }
+
+        println!("#####################################");
     }
 }
