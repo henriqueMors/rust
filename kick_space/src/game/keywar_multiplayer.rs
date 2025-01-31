@@ -1,5 +1,4 @@
 use crate::game::random_number::random_number;
-use crate::game::check_result::check_result;
 use crate::game::instruction::instruction_01;
 use std::io;
 

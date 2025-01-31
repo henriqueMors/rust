@@ -1,5 +1,5 @@
-CREATE TABLE bestplayers (
+CREATE TABLE best_players (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
-    score INTEGER NOT NULL DEFAULT 0
+    score INTEGER NOT NULL
 );
