@@ -35,7 +35,7 @@ pub fn keywar_multiplayer() {
 
     // Cada jogador faz uma tentativa
     for player in &players {
-        println!("Tentativa de {}: ", player);
+        println!("\nTentativa de {}: ", player);
         instruction_01(); // Exibe as instruções do jogo
 
         let mut key_space = String::new();
@@ -49,14 +49,14 @@ pub fn keywar_multiplayer() {
             if key_space.trim().chars().all(|c| c == ' ') {
                 break;
             } else {
-                println!("Entrada inválida! Digite apenas espaços.");
+                println!("Entrada inválida! Digite apenas espaços.\n");
             }
         }
 
         // Conta quantos espaços foram digitados
         let space_count = key_space.chars().filter(|&c| c == ' ').count();
         scores.push((player.clone(), space_count));
-        println!("{} digitou {} espaços.", player, space_count);
+        println!("Contabilizado!");
     }
 
     // Verifica quem chegou mais próximo ao valor-alvo
@@ -74,7 +74,7 @@ pub fn keywar_multiplayer() {
 
     // Exibe o vencedor
     println!(
-        "O valor-alvo era: {}. \nand, the winner is.... \n{}, com score de {} espaços!",
+        "O valor-alvo era: {}. \nand, the winner is... \n{}, com score de {} espaços!",
         challenging, closest_player, closest_guess
     );
 
