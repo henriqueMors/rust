@@ -28,7 +28,7 @@ pub fn keywar_multiplayer() {
     }
 
     let challenging = random_number(); // Gera um número aleatório entre 1 e 100
-    println!("O valor-alvo foi definido! Desafio: {} espaços!", challenging);
+    println!("\nO valor-alvo foi definido! Desafio: {} espaços!", challenging);
     println!("Vamos começar!");
 
     let mut scores = Vec::new();
@@ -74,15 +74,26 @@ pub fn keywar_multiplayer() {
 
     // Exibe o vencedor
     println!(
-        "O valor-alvo era: {}. \nand, the winner is... \n{}, com score de {} espaços!",
+        "\nO valor-alvo era: {}. \nand, the winner is... \n{}, com score de {} espaços!",
         challenging, closest_player, closest_guess
     );
 
-    // Exibe as pontuações
-    println!("\nPontuações:");
-    for (player, guess) in &scores {
+    // Classifica os jogadores por proximidade ao valor-alvo
+    let mut ranked_scores = scores.clone();
+    ranked_scores.sort_by(|a, b| {
+        let diff_a = (a.1 as isize - challenging as isize).abs();
+        let diff_b = (b.1 as isize - challenging as isize).abs();
+        diff_a.cmp(&diff_b) // Ordena do menor para o maior (mais próximo ao mais distante)
+    });
+
+    // Exibe a classificação
+    println!("\nClassificação:");
+    for (i, (player, guess)) in ranked_scores.iter().enumerate() {
         let difference = (*guess as isize - challenging as isize).abs();
-        println!("{} acertou {} espaços, diferença de {}", player, guess, difference);
+        println!(
+            "{}. {}: {} espaços (diferença de {})",
+            i + 1, player, guess, difference
+        );
     }
 
     // Verifica o resultado final
