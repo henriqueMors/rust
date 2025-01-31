@@ -25,8 +25,9 @@ pub fn keywar_multiplayer() {
         players.push(player_name.trim().to_string());
     }
 
-    let target = random_number();
-    println!("O valor-alvo foi definido! Vamos começar!");
+    let challenging = random_number(); // Gera um número aleatório entre 1 e 100
+    println!("O valor-alvo foi definido! Desafio: {} espaços!", challenging);
+    println!(" Vamos começar!");
 
     let mut scores = Vec::new();
 
