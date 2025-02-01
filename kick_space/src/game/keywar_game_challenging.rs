@@ -3,7 +3,7 @@ use crate::game::instruction::instruction_01;
 use std::io;
 
 pub fn keywar_game_challenging() {
-    println!("Modo Desafiado Selecionado!");
+    println!("Modo Desafiador Selecionado!");
 
     println!("Digite o número de espaços que deseja desafiar:");
     let challenging: usize = loop {
