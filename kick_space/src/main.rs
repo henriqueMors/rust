@@ -2,6 +2,7 @@
 mod game;
 mod db;
 mod schema;
+mod models;
 
 use colored::*;
 use game::game_mode::game_mode;

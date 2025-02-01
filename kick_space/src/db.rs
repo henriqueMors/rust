@@ -2,6 +2,7 @@ use diesel::prelude::*;
 use diesel::SqliteConnection;
 use crate::models::{NewPlayer, BestPlayer};
 use crate::schema::best_players::dsl::*;
+use crate::schema::best_players;
 
 pub fn establish_connection() -> SqliteConnection {
     dotenvy::dotenv().ok();
@@ -16,8 +17,8 @@ pub fn save_player(conn: &mut SqliteConnection, player_name: &str, player_score:
         score: player_score,
     };
 
-    diesel::insert_into(best_players)
-        .values(&new_player)
+    diesel::insert_into(best_players::table)
+        .values(new_player) // Passa new_player por valor
         .execute(conn)?;
 
     Ok(())
@@ -25,6 +26,7 @@ pub fn save_player(conn: &mut SqliteConnection, player_name: &str, player_score:
 
 pub fn get_best_players(conn: &mut SqliteConnection) -> Vec<BestPlayer> {
     best_players
-        .load::<BestPlayer>(conn)
+        .select(BestPlayer::as_select()) // Usa Selectable para carregar os dados
+        .load(conn)
         .expect("Erro ao carregar os melhores jogadores")
 }
