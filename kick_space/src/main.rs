@@ -12,9 +12,9 @@ use game::keywar_game_challenging::keywar_game_challenging;
 use game::keywar_multiplayer::keywar_multiplayer;
 
 fn main() {
-    println!("{}", "##############################".red().bold());
-    println!("{}", "       @#=-KEY WAR-=#@".red().bold());
-    println!("{}", "##############################".red().bold());
+    println!("{}", "#####################################".red().bold());
+    println!("{}", "##        @#=-SPACE WAR-=#@        ##".red().bold());
+    println!("{}", "#####################################".red().bold());
 
     // Loop principal do jogo
     loop {

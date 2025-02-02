@@ -26,7 +26,7 @@ pub fn save_player(conn: &mut SqliteConnection, player_name: &str, player_score:
 
 pub fn get_best_players(conn: &mut SqliteConnection) -> Vec<BestPlayer> {
     best_players
-    .select((id, name, score)) // Usa Selectable para carregar os dados
+    .select((/*id,*/name, score)) // Usa Selectable para carregar os dados
         .load(conn)
         .expect("Erro ao carregar os melhores jogadores")
 }

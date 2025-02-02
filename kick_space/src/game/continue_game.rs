@@ -2,7 +2,7 @@ use std::io; //biblioteca para insercao de caracteres pelo teclado
 
 pub fn continue_game() -> Option<String> {
     println!("\n#####################################");
-    println!("\nO que você deseja fazer?");
+    println!("O que você deseja fazer?");
     println!("A - Jogar novamente");
     println!("C - Escolher outro modo de jogo");
     println!("E - Encerrar o jogo");

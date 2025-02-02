@@ -3,7 +3,7 @@ use std::io;
 
 pub fn game_mode() -> String {
     loop {
-        println!("##############################");
+        println!("#####################################");
         println!("Escolha o modo de jogo:");
         println!("1 - Número aleatório");
         println!("2 - Desafiado");
@@ -15,8 +15,7 @@ pub fn game_mode() -> String {
         io::stdin()
             .read_line(&mut choice)
             .expect("Erro ao ler a entrada");
-        
-        print!("Digite sua opção: ");
+
         match choice.trim() {
             "1" => return "random".to_string(),
             "2" => return "challenging".to_string(),
@@ -27,7 +26,7 @@ pub fn game_mode() -> String {
             }
             "0" => {
                 println!("Jogo encerrado. Até a próxima!");
-                println!("##############################");
+                println!("#####################################");
                 std::process::exit(0);
             }
             _ => {
