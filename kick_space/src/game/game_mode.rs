@@ -10,6 +10,7 @@ pub fn game_mode() -> String {
         println!("3 - Multiplayer");
         println!("4 - Ver melhores jogadores");
         println!("0 - Sair do jogo");
+        print!("Digite sua opção: ");
 
         let mut choice = String::new();
         io::stdin()
