@@ -28,7 +28,7 @@ pub fn game_mode() -> String {
                 continue;
             }
             "0" => {
-                println!("Jogo encerrado. Até a próxima!");
+                println!("Saindo do jogo, até a próxima!");
                 println!("#####################################");
                 std::process::exit(0);
             }
