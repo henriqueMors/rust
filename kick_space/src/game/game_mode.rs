@@ -15,6 +15,7 @@ pub fn game_mode() -> String {
         io::stdin()
             .read_line(&mut choice)
             .expect("Erro ao ler a entrada");
+        
         print!("Digite sua opção: ");
         match choice.trim() {
             "1" => return "random".to_string(),
