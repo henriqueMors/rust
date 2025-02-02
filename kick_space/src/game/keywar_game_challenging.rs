@@ -6,7 +6,9 @@ pub fn keywar_game_challenging() {
     println!("#####################################");
     println!("Modo Desafiador Selecionado!");
 
-    println!("Digite o número de espaços que deseja desafiar:");
+    print!("Número de espaços: "); // Exibe a frase antes da entrada
+    io::Write::flush(&mut std::io::stdout()).expect("Falha ao limpar o buffer"); // Garante que o print apareça antes da entrada do usuário
+
     let challenging: usize = loop {
         let mut input = String::new();
         io::stdin()

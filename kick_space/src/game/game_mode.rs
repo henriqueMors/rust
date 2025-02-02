@@ -6,7 +6,7 @@ pub fn game_mode() -> String {
         println!("#####################################");
         println!("Escolha o modo de jogo:");
         println!("1 - Número aleatório");
-        println!("2 - Desafiado");
+        println!("2 - Desafiador");
         println!("3 - Multiplayer");
         println!("4 - Ver melhores jogadores");
         println!("0 - Sair do jogo");
