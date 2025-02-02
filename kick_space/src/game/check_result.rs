@@ -13,6 +13,7 @@ pub fn check_result(space_count: usize, challenging: usize, player_name: &str) {
         
         let mut rng = rand::thread_rng();
         let random_index = rng.gen_range(0..messages.len());
+        println!("=====================================");
         println!("{}", messages[random_index]);
 
         // Salva o jogador no banco de dados

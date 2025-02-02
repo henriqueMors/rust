@@ -2,7 +2,7 @@ use std::io; //biblioteca para insercao de caracteres pelo teclado
 
 pub fn continue_game() -> Option<String> {
     println!("\n#####################################");
-    println!("O que você deseja fazer?");
+    println!("Escolha uma opção:");
     println!("A - Jogar novamente");
     println!("C - Escolher outro modo de jogo");
     println!("E - Encerrar o jogo");
@@ -11,7 +11,7 @@ pub fn continue_game() -> Option<String> {
     io::stdin()
         .read_line(&mut input)
         .expect("Erro ao ler a entrada");
-
+    println!("Digite a opção: ");
     let input = input.trim().to_uppercase();
 
     match input.as_str() {
