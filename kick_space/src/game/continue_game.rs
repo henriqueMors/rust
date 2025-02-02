@@ -6,12 +6,12 @@ pub fn continue_game() -> Option<String> {
     println!("A - Jogar novamente");
     println!("C - Escolher outro modo de jogo");
     println!("E - Encerrar o jogo");
-
+    println!("Digite sua opção: ");
     let mut input = String::new();
     io::stdin()
         .read_line(&mut input)
         .expect("Erro ao ler a entrada");
-    println!("Digite a opção: ");
+
     let input = input.trim().to_uppercase();
 
     match input.as_str() {
