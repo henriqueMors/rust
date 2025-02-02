@@ -1,13 +1,15 @@
 use std::io; //biblioteca para insercao de caracteres pelo teclado
 
 pub fn continue_game() -> Option<String> {
-    println!("\n#####################################");
+    println!("#####################################");
     println!("Escolha uma opção:");
     println!("A - Jogar novamente");
     println!("C - Escolher outro modo de jogo");
     println!("E - Encerrar o jogo");
     
-    print!("Digite sua opção: ");
+    print!("Digite sua opção: "); // Exibe a frase antes da entrada
+    io::Write::flush(&mut std::io::stdout()).expect("Falha ao limpar o buffer"); // Garante que o print apareça antes da entrada do usuário
+
     let mut input = String::new();
     io::stdin()
         .read_line(&mut input)

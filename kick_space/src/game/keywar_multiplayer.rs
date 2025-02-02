@@ -3,7 +3,7 @@ use crate::game::instruction::instruction_01;
 use std::io;
 
 pub fn keywar_multiplayer() {
-    println!("##############################");
+    println!("#####################################");
     println!("Modo Multiplayer Selecionado!");
 
     // Pede o número de jogadores

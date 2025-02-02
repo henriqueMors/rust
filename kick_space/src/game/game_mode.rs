@@ -10,7 +10,9 @@ pub fn game_mode() -> String {
         println!("3 - Multiplayer");
         println!("4 - Ver melhores jogadores");
         println!("0 - Sair do jogo");
-        print!("Digite sua opção: ");
+
+        print!("Digite sua opção: "); // Exibe a frase antes da entrada
+        io::Write::flush(&mut std::io::stdout()).expect("Falha ao limpar o buffer"); // Garante que o print apareça antes da entrada do usuário
 
         let mut choice = String::new();
         io::stdin()

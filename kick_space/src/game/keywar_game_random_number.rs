@@ -4,7 +4,7 @@ use crate::game::random_number::random_number;
 use std::io;
 
 pub fn keywar_game_random_number() {
-        println!("##############################");
+        println!("#####################################");
         println!("Hora de testar sua percepção!");
     let challenging = random_number(); // Gera um número aleatório entre 1 e 100
 
@@ -28,4 +28,5 @@ pub fn keywar_game_random_number() {
     let space_count = key_space.chars().filter(|&c| c == ' ').count();
     check_result(space_count, challenging, "Jogador"); // Adicione o nome do jogador aqui
     println!("Você digitou {} caracteres de espaço.", space_count);
+    println!("=====================================");
 }
