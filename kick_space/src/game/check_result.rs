@@ -21,6 +21,6 @@ pub fn check_result(space_count: usize, challenging: usize, player_name: &str) {
             eprintln!("Erro ao salvar o jogador no banco de dados: {}", e);
         }
     } else {
-        println!("Errooooooooooouu, a quantidade era de {}!", challenging);
+        println!("Errooooooooooouu, a quantidade era de {}...", challenging);
     }
 }

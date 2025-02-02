@@ -5,10 +5,10 @@ use std::io;
 
 pub fn keywar_game_random_number() {
         println!("##############################");
-        println!("Como está sua percepção?");
+        println!("Hora de testar sua percepção!");
     let challenging = random_number(); // Gera um número aleatório entre 1 e 100
 
-    println!("Hora de testar! Seu desafio: {}!", challenging);
+    println!("Seu desafio: {}!", challenging);
 
     let mut key_space = String::new();
     loop {
