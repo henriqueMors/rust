@@ -4,7 +4,8 @@ use crate::game::random_number::random_number;
 use std::io;
 
 pub fn keywar_game_random_number() {
-    println!("Como está sua percepção?");
+        println!("##############################");
+        println!("Como está sua percepção?");
     let challenging = random_number(); // Gera um número aleatório entre 1 e 100
 
     println!("Hora de testar! Seu desafio: {}!", challenging);

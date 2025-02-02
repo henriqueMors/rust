@@ -8,5 +8,5 @@ pub fn show_best_players() {
     for player in players {
         println!("{} - {} espaços", player.name, player.score);
     }
-    println!("=========================\n");
+    println!("==========================\n");
 }

@@ -3,6 +3,7 @@ use std::io;
 
 pub fn game_mode() -> String {
     loop {
+        println!("##############################");
         println!("Escolha o modo de jogo:");
         println!("1 - Número aleatório");
         println!("2 - Desafiado");
@@ -25,6 +26,7 @@ pub fn game_mode() -> String {
             }
             "0" => {
                 println!("Jogo encerrado. Até a próxima!");
+                println!("##############################");
                 std::process::exit(0);
             }
             _ => {
