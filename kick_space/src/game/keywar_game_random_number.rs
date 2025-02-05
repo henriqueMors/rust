@@ -25,8 +25,12 @@ pub fn keywar_game_random_number() {
         }
     }
 
-    let space_count = key_space.chars().filter(|&c| c == ' ').count();
-    check_result(space_count, challenging, "Jogador"); // Adicione o nome do jogador aqui
+
+    
+    let mut conn = establish_connection();
+check_result(&mut conn, space_count, challenging);
+
+ // Adicione o nome do jogador aqui
     println!("Você digitou {} caracteres de espaço.", space_count);
     println!("=====================================");
 }

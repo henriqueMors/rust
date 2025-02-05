@@ -12,21 +12,53 @@ pub fn establish_connection() -> SqliteConnection {
 }
 
 pub fn save_player(conn: &mut SqliteConnection, player_name: &str, player_score: i32) -> Result<(), diesel::result::Error> {
-    let new_player = NewPlayer {
-        name: player_name.to_string(),
-        score: player_score,
-    };
+    use crate::schema::best_players::dsl::*;
 
-    diesel::insert_into(best_players::table)
-        .values(new_player) // Passa new_player por valor
-        .execute(conn)?;
+    let count: i64 = best_players.count().get_result(conn)?;
+
+    if count < 10 {
+        // Ainda há espaço, inserir normalmente
+        let new_player = NewPlayer {
+            name: player_name.to_string(),
+            score: player_score,
+        };
+
+        diesel::insert_into(best_players)
+            .values(new_player)
+            .execute(conn)?;
+
+    } else {
+        // Ranking cheio, verificar se o novo jogador pode substituir alguém
+        let worst_player = best_players.order(score.asc()).first::<BestPlayer>(conn);
+
+        if let Ok(worst) = worst_player {
+            if player_score > worst.score {
+                // Substituir o pior jogador
+                diesel::delete(best_players.filter(id.eq(worst.id)))
+                    .execute(conn)?;
+
+                let new_player = NewPlayer {
+                    name: player_name.to_string(),
+                    score: player_score,
+                };
+
+                diesel::insert_into(best_players)
+                    .values(new_player)
+                    .execute(conn)?;
+            }
+        }
+    }
 
     Ok(())
 }
 
+
 pub fn get_best_players(conn: &mut SqliteConnection) -> Vec<BestPlayer> {
+    use crate::schema::best_players::dsl::*;
+
     best_players
-    .select((/*id,*/name, score)) // Usa Selectable para carregar os dados
+        .order(score.desc()) // Ordena pela quantidade acertada (maior primeiro)
+        .limit(10) // Mantém apenas os 10 melhores
         .load(conn)
         .expect("Erro ao carregar os melhores jogadores")
 }

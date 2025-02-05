@@ -1,8 +1,9 @@
-//checagem de selecao de mensagem conforme resultado
-use rand::Rng; //biblioteca para obter um numero randomico
-use crate::db::{establish_connection, save_player};
+use rand::Rng;
+use std::io;
+use crate::db::{establish_connection, save_player, get_best_players};
+use diesel::SqliteConnection;
 
-pub fn check_result(space_count: usize, challenging: usize, player_name: &str) {
+pub fn check_result(conn: &mut SqliteConnection, space_count: usize, challenging: usize) {
     if space_count == challenging {
         let messages = vec![
             "VOCÊ ACERTOU!!!",
@@ -16,10 +17,26 @@ pub fn check_result(space_count: usize, challenging: usize, player_name: &str) {
         println!("=====================================");
         println!("{}", messages[random_index]);
 
+        // Pede o nome do jogador
+        let mut player_name = String::new();
+        println!("Digite seu nome para registrar no ranking: ");
+        io::stdin()
+            .read_line(&mut player_name)
+            .expect("Erro ao ler entrada");
+        let player_name = player_name.trim();
+
         // Salva o jogador no banco de dados
-        let mut conn = establish_connection();
-        if let Err(e) = save_player(&mut conn, player_name, space_count as i32) {
+        if let Err(e) = save_player(conn, player_name, space_count as i32) {
             eprintln!("Erro ao salvar o jogador no banco de dados: {}", e);
+        } else {
+            println!("✅ Jogador salvo no ranking!");
+        }
+
+        // Exibir o ranking atualizado
+        println!("\n🏆 Top 10 Melhores Jogadores:");
+        let best_players = get_best_players(conn);
+        for (index, player) in best_players.iter().enumerate() {
+            println!("{}. {} - Quantidade Acertada: {}", index + 1, player.name, player.score);
         }
     } else {
         println!("=====================================");
