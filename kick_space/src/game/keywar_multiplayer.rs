@@ -7,9 +7,7 @@ pub fn keywar_multiplayer() {
     println!("Modo Multiplayer Selecionado!");
 
     // Pede o número de jogadores
-    print!("Número de jogadores: "); // Exibe a frase antes da entrada
-    io::Write::flush(&mut std::io::stdout()).expect("Falha ao limpar o buffer"); // Garante que o print apareça antes da entrada do usuário
-
+    println!("Digite o número de jogadores:");
     let num_players: usize = loop {
         let mut input = String::new();
         io::stdin().read_line(&mut input).expect("Erro ao ler entrada");
@@ -22,18 +20,15 @@ pub fn keywar_multiplayer() {
     let mut players = Vec::new();
 
     // Registra os nomes dos jogadores
-    for i in 1..= num_players {
-        print!("Digite o nome do jogador {}: ", i); // Exibe a frase antes da entrada
-        io::Write::flush(&mut std::io::stdout()).expect("Falha ao limpar o buffer"); // Garante que o print apareça antes da entrada do usuário
+    for i in 1..=num_players {
+        println!("Digite o nome do jogador {}:", i);
         let mut player_name = String::new();
         io::stdin().read_line(&mut player_name).expect("Erro ao ler entrada");
         players.push(player_name.trim().to_string());
     }
 
-    println!("=====================================");
-
     let challenging = random_number(); // Gera um número aleatório entre 1 e 100
-    println!("\nO valor-alvo foi definido: {} espaços!", challenging);
+    println!("\nO valor-alvo foi definido! Desafio: {} espaços!", challenging);
     println!("Vamos começar!");
 
     let mut scores = Vec::new();
