@@ -5,6 +5,7 @@ use crate::game::random_number::random_number;
 use diesel::SqliteConnection;
 
 pub fn keywar_game_random_number(conn: &mut SqliteConnection) {
+    println!("#####################################");
     println!("Como está sua percepção?");
     let challenging = random_number(); // Gera um número aleatório entre 1 e 100
 
