@@ -8,11 +8,12 @@ pub fn show_best_players() {
     players.sort_by(|a, b| b.score.cmp(&a.score));
 
     println!("#####################################");
-    println!("##       MELHORES JOGADORES        ##");
+    println!("##            THE BEAST            ##");
     println!("#####################################");
+    println!("\n   🏆 Top 10 Melhores Jogadores:   ");
     println!("=====================================");
-    for player in players {
-        println!("{} - {} espaços", player.name, player.score);
+    for (index, player) in players.iter().enumerate() {
+        println!("{}. {} - Quantidade: {}", index + 1, player.name, player.score);
     }
     println!("=====================================");
 }
