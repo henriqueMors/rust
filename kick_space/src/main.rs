@@ -1,4 +1,3 @@
-// main.rs
 mod game;
 mod db;
 mod schema;
@@ -7,26 +6,24 @@ mod models;
 use colored::*;
 use game::game_mode::game_mode;
 use game::continue_game::continue_game;
-use game::keywar_game_random_number::keywar_game_random_number;
 use game::keywar_game_challenging::keywar_game_challenging;
+use game::keywar_game_random_number::keywar_game_random_number;
 use game::keywar_multiplayer::keywar_multiplayer;
+use db::establish_connection;
 
 fn main() {
     println!("{}", "#####################################".red().bold());
     println!("{}", "##        @#=-SPACE WAR-=#@        ##".red().bold());
     println!("{}", "#####################################".red().bold());
 
-    // Loop principal do jogo
-    loop {
-        // Escolhe o modo de jogo
-        let selected_mode = game_mode();
+    let mut conn = establish_connection();
 
-        // Loop para o modo de jogo atual
+    loop {
+        let selected_mode = game_mode();
         loop {
-            // Inicia o jogo baseado no modo escolhido
             match selected_mode.as_str() {
-                "random" => keywar_game_random_number(),
-                "challenging" => keywar_game_challenging(),
+                "random" => keywar_game_random_number(&mut conn),
+                "challenging" => keywar_game_challenging(&mut conn),
                 "multiplayer" => keywar_multiplayer(),
                 _ => {
                     println!("#ERR: Modo inválido!");
@@ -34,10 +31,9 @@ fn main() {
                 }
             }
 
-            // Pergunta ao jogador o que ele deseja fazer
             match continue_game() {
-                Some(action) if action == "A" => continue,  // Reinicia o mesmo modo
-                Some(action) if action == "C" => break,    // Volta ao menu para mudar o modo
+                Some(action) if action == "A" => continue,
+                Some(action) if action == "C" => break,
                 None => {
                     println!("Até breve.");
                     return;

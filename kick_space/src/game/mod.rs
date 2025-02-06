@@ -1,6 +1,10 @@
 //usado para organizar e gerenciar os submodulos de uma pasta no Rust. Ele funciona como o ponto central de configuracao de modulos, permitindo que outros arquivos (como main.rs) acessem os submodulos declarados na pasta.
 //pub é para deixar a funcao publica
 
+// Módulo principal do jogo, gerencia todos os submódulos
+
+// Módulo principal do jogo, gerencia todos os submódulos
+
 pub mod random_number;
 pub mod game_mode;
 pub mod keywar_game_random_number;
@@ -10,3 +14,8 @@ pub mod instruction;
 pub mod continue_game;
 pub mod check_result;
 pub mod best_players_screen;
+
+// Todos os módulos do jogo foram organizados corretamente para evitar erros de compilação.
+
+
+// Todos os módulos do jogo foram organizados corretamente para evitar erros de compilação.

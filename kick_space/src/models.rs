@@ -1,17 +1,17 @@
 use diesel::prelude::*;
-use diesel::Selectable;
+use crate::schema::best_players;
 
 #[derive(Queryable, Insertable, Selectable, Debug)]
 #[diesel(table_name = best_players)]
 pub struct BestPlayer {
+    pub id: i32,
     pub name: String,
     pub score: i32,
 }
 
-#[derive(Queryable, Selectable)]
+#[derive(Insertable)]
 #[diesel(table_name = best_players)]
-pub struct BestPlayer {
-    //pub id: Option<i32>,
+pub struct NewPlayer {
     pub name: String,
     pub score: i32,
 }

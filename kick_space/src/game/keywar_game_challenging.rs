@@ -1,13 +1,14 @@
 use crate::game::check_result::check_result;
 use crate::game::instruction::instruction_01;
 use std::io;
+use diesel::SqliteConnection;
 
-pub fn keywar_game_challenging() {
+pub fn keywar_game_challenging(conn: &mut SqliteConnection) {
     println!("#####################################");
     println!("Modo Desafiador Selecionado!");
 
-    print!("Número de espaços: "); // Exibe a frase antes da entrada
-    io::Write::flush(&mut std::io::stdout()).expect("Falha ao limpar o buffer"); // Garante que o print apareça antes da entrada do usuário
+    print!("Número de espaços: ");
+    io::Write::flush(&mut std::io::stdout()).expect("Falha ao limpar o buffer");
 
     let challenging: usize = loop {
         let mut input = String::new();
@@ -23,7 +24,7 @@ pub fn keywar_game_challenging() {
 
     let mut key_space = String::new();
     loop {
-        instruction_01(); // Exibe as instruções do jogo
+        instruction_01();
         key_space.clear();
         io::stdin()
             .read_line(&mut key_space)
@@ -37,6 +38,6 @@ pub fn keywar_game_challenging() {
     }
 
     let space_count = key_space.chars().filter(|&c| c == ' ').count();
-    check_result(space_count, challenging, "Jogador"); // Adicione o nome do jogador aqui
+    check_result(conn, space_count, challenging);
     println!("Você digitou {} caracteres de espaço.", space_count);
 }

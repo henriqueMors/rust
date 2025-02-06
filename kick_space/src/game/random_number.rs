@@ -1,7 +1,7 @@
 use rand::Rng;
 
-// gerador automatico
-pub fn random_number() -> usize { // -> usado para que ele seja um return com um valor i32
-    let mut rng = rand::thread_rng(); // gerador de numeros aleatorios
-    rng.gen_range(1..=100) // retorna um numero entre 1 e 100 -- como utilizei usize, pode-se indicar um valor maior 
+// Função para gerar um número aleatório entre 1 e 100
+pub fn random_number() -> usize {
+    let mut rng = rand::thread_rng();
+    rng.gen_range(1..=100) // Retorna um número aleatório dentro do intervalo especificado
 }
