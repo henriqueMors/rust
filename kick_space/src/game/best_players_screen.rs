@@ -10,7 +10,7 @@ pub fn show_best_players() {
     println!("#####################################");
     println!("##            THE BEAST            ##");
     println!("#####################################");
-    println!("\n   🏆 Top 10 Melhores Jogadores:   ");
+    println!("     🏆 Top 10 Melhores Jogadores:   ");
     println!("=====================================");
     for (index, player) in players.iter().enumerate() {
         println!("{}. {} - Quantidade: {}", index + 1, player.name, player.score);
