@@ -2,7 +2,6 @@ use diesel::prelude::*;
 use diesel::SqliteConnection;
 use crate::models::{NewPlayer, BestPlayer};
 use crate::schema::best_players::dsl::*;
-use crate::schema::best_players;
 
 pub fn establish_connection() -> SqliteConnection {
     dotenvy::dotenv().ok();
@@ -36,7 +35,7 @@ pub fn reset_best_players(conn: &mut SqliteConnection) -> Result<(), diesel::res
     diesel::delete(best_players)
         .execute(conn)?;
     
-    println!("✅ Tabela de melhores jogadores resetada com sucesso!");
+    //println!("✅ Tabela de melhores jogadores resetada com sucesso!");
     Ok(())
 }
 
