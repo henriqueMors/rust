@@ -4,7 +4,7 @@ pub fn continue_game() -> Option<String> {
     println!("#####################################");
     println!("Escolha uma opção:");
     println!("A - Jogar novamente");
-    println!("C - Escolher outro modo de jogo");
+    println!("C - Menu principal");
     println!("E - Encerrar o jogo");
     
     print!("Digite sua opção: "); // Exibe a frase antes da entrada
