@@ -1,4 +1,5 @@
 use crate::game::best_players_screen::show_best_players;
+use crate::db::{establish_connection, reset_best_players}; // Adicionamos a importação
 use std::io;
 
 pub fn game_mode() -> String {
@@ -9,10 +10,11 @@ pub fn game_mode() -> String {
         println!("2 - Desafiador");
         println!("3 - Multiplayer");
         println!("4 - Ver melhores jogadores");
+        println!("5 - Resetar melhores jogadores");
         println!("0 - Sair do jogo");
 
-        print!("Digite sua opção: "); // Exibe a frase antes da entrada
-        io::Write::flush(&mut std::io::stdout()).expect("Falha ao limpar o buffer"); // Garante que o print apareça antes da entrada do usuário
+        print!("Digite sua opção: ");
+        io::Write::flush(&mut std::io::stdout()).expect("Falha ao limpar o buffer");
 
         let mut choice = String::new();
         io::stdin()
@@ -26,6 +28,15 @@ pub fn game_mode() -> String {
             "4" => {
                 show_best_players();
                 continue;
+            }
+            "5" => {
+                let mut conn = establish_connection();
+                if let Err(e) = reset_best_players(&mut conn) {
+                    eprintln!("Erro ao resetar a tabela: {}", e);
+                } else {
+                    println!("✅ Tabela de melhores jogadores resetada com sucesso!");
+                }
+                continue; // Continua o loop do menu
             }
             "0" => {
                 println!("Saindo do jogo, até a próxima!");

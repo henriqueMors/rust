@@ -2,6 +2,7 @@ use diesel::prelude::*;
 use diesel::SqliteConnection;
 use crate::models::{NewPlayer, BestPlayer};
 use crate::schema::best_players::dsl::*;
+use crate::schema::best_players;
 
 pub fn establish_connection() -> SqliteConnection {
     dotenvy::dotenv().ok();
@@ -23,7 +24,6 @@ pub fn save_player(conn: &mut SqliteConnection, player_name: &str, player_score:
     Ok(())
 }
 
-
 pub fn get_best_players(conn: &mut SqliteConnection) -> Vec<BestPlayer> {
     best_players
         .order(score.desc()) // Ordena pelo score em ordem decrescente
@@ -31,3 +31,12 @@ pub fn get_best_players(conn: &mut SqliteConnection) -> Vec<BestPlayer> {
         .load(conn)
         .expect("Erro ao carregar os melhores jogadores")
 }
+
+pub fn reset_best_players(conn: &mut SqliteConnection) -> Result<(), diesel::result::Error> {
+    diesel::delete(best_players)
+        .execute(conn)?;
+    
+    println!("✅ Tabela de melhores jogadores resetada com sucesso!");
+    Ok(())
+}
+
