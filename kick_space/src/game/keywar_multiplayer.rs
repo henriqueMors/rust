@@ -20,7 +20,7 @@ pub fn keywar_multiplayer() {
 
     let mut players = Vec::new();
 
-    // Captura os nomes dos jogadores
+    //captura os nomes dos jogadores
     for i in 1..=num_players {
         print!("Digite o nome do jogador {}: ", i);
         io::Write::flush(&mut std::io::stdout()).expect("Falha ao limpar o buffer");
@@ -36,7 +36,7 @@ pub fn keywar_multiplayer() {
 
     let mut scores = Vec::new();
 
-    // Cada jogador faz uma tentativa
+    //cada jogador faz uma tentativa
     for player in &players {
         println!("\nTentativa de {}: ", player);
         instruction_01();
@@ -53,13 +53,13 @@ pub fn keywar_multiplayer() {
             }
         }
 
-        // Conta quantos espaços foram digitados
+        //conta quantos espacos foram digitados
         let space_count = key_space.chars().filter(|&c| c == ' ').count();
         scores.push((player.clone(), space_count));
         println!("Contabilizado!");
     }
 
-    // Verifica quem chegou mais próximo ao valor-alvo
+    //verifica quem chegou mais proximo ao valor-alvo
     let (mut closest_player, mut closest_guess) = scores[0].clone();
     let mut smallest_difference = (closest_guess as isize - challenging as isize).abs();
 
@@ -72,13 +72,13 @@ pub fn keywar_multiplayer() {
         }
     }
 
-    // Exibe o vencedor
+    //exibe o vencedor
     println!(
         "\nO valor-alvo era: {}. \nE o vencedor é... \n{}, com score de {} espaços!",
         challenging, closest_player, closest_guess
     );
 
-    // Classifica os jogadores por proximidade ao valor-alvo
+    //classifica os jogadores por proximidade ao valor-alvo
     let mut ranked_scores = scores.clone();
     ranked_scores.sort_by(|a, b| {
         let diff_a = (a.1 as isize - challenging as isize).abs();
@@ -86,7 +86,7 @@ pub fn keywar_multiplayer() {
         diff_a.cmp(&diff_b) // Ordena do menor para o maior (mais próximo ao mais distante)
     });
 
-    // Exibe a classificação final
+    //exibe a classificacao final
     println!("\nClassificação:");
     for (i, (player, guess)) in ranked_scores.iter().enumerate() {
         let difference = (*guess as isize - challenging as isize).abs();

@@ -25,7 +25,7 @@ pub fn save_player(conn: &mut SqliteConnection, player_name: &str, player_score:
 
 pub fn get_best_players(conn: &mut SqliteConnection) -> Vec<BestPlayer> {
     best_players
-        .order(score.desc()) // Ordena pelo score em ordem decrescente
+        .order(score.desc()) //ordena pelo score em ordem decrescente
         .select(BestPlayer::as_select())
         .load(conn)
         .expect("Erro ao carregar os melhores jogadores")

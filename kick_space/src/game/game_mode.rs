@@ -1,5 +1,5 @@
 use crate::game::best_players_screen::show_best_players;
-use crate::db::{establish_connection, reset_best_players}; // Adicionamos a importação
+use crate::db::{establish_connection, reset_best_players}; //adicionada a importacao
 use std::io;
 
 pub fn game_mode() -> String {
@@ -36,7 +36,7 @@ pub fn game_mode() -> String {
                 } else {
                     println!("✅ Tabela de melhores jogadores resetada com sucesso!");
                 }
-                continue; // Continua o loop do menu
+                continue; //continua o loop do menu
             }
             "0" => {
                 println!("Saindo do jogo, até a próxima!");
