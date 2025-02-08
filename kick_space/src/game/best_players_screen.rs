@@ -4,7 +4,7 @@ pub fn show_best_players() {
     let mut conn = establish_connection();
     let mut players = get_best_players(&mut conn);
 
-    // Ordenar do maior para o menor score
+    //ordenar do maior para o menor score
     players.sort_by(|a, b| b.score.cmp(&a.score));
 
     println!("#####################################");
